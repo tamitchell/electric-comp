@@ -25,14 +25,12 @@ export default class Navigation extends Component {
       }
       render(){
           return (
-            <Navbar color="faded" expand="md">
-              <NavbarBrand color="light" href="/">Diverse Electric</NavbarBrand>
-              <NavbarToggler onClick={this.toggle} />
+            <nav>
+            <Navbar className="navigation" color="faded" expand="md">
+              <NavbarBrand href="/">Diverse Electric</NavbarBrand>
+              <NavbarToggler onClick={this.toggle} className="mr-2" />
               <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <Link to="/services">Services</Link>
-                </NavItem>
                 <NavItem>
                   <Link to="/pricing">Pricing</Link>
                 </NavItem>
@@ -45,6 +43,7 @@ export default class Navigation extends Component {
               </Nav>
               </Collapse>
             </Navbar>
+            </nav>
   );
 };
 }

@@ -5,7 +5,7 @@ import asyncComponent from './AsyncComponent'
 import "../sass/App.scss";
 
 const Home = asyncComponent(() =>
-    import('./Home').then(module => module.default)
+    import('./Home/Home').then(module => module.default)
 )
 class App extends Component {
   render() {

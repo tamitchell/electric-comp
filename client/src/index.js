@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App.js";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import * as serviceWorker from "./serviceWorker";
 import createBrowserHistory from 'history/createBrowserHistory';
