@@ -2,48 +2,67 @@
 @import "./mixins";
 
 .container-fluid {
-    height: 100vh;
-    .row {
-        height:100%;
-        padding: 15px;
+  position: relative;
+  height: 100vh;
+  .row {
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    .col {
+      height: 100%;
     }
+  }
 }
 
 .hero {
-    background-color: $mainred;
-    background-image: url("../img/hero-img-dark.png");
-    @include backgroundimg;
-    .row {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-    }
+  background-color: $mainred;
+  background-image: url("../img/hero-img-dark.png");
+  @include backgroundimg;
 }
 
 .home-about-container {
-    position: relative;
-        .col:first-child {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-        }
-        .col:nth-child(2) {
-            position: absolute;
-            top: -100px;
-            right: 60px;
-            bottom: 0;
-            z-index: -1;
-            width: 100%;
-            overflow: hidden;
-       }
-       .btn {
-           @include btn(black, black,);
-        }
+  .col:first-child {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  .col:nth-child(2) {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+  }
+  .btn {
+    @include btn(black, black);
+  }
 }
 
 .home-services-container {
-    background-color: $yellow;
-    .btn {
-        @include btn(black, black,);
-     }
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $yellow;
+  .row-inner {
+    flex-flow: row wrap;
+    .col {
+      width: 40%;
+      li {
+          text-align: left;
+          text-transform: capitalize;
+          font-size: 20px;
+          font-weight: 400;
+          padding: 15px;
+      }
+    }
+  }
+  .btn {
+    display: inline-block;
+    margin: 0 auto;
+    @include btn(black, black);
+  }
 }
