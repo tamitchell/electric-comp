@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from "reactstrap";
 
 const About = () => {
   return (
+    <Container className="about-container" fluid={true}>
       <Row>
         <Col className="col" lg={5}>
           <h2>Introduce Your Company Here</h2>
@@ -34,6 +35,7 @@ const About = () => {
         <img src={require("../../img/cables.jpg")} alt="cables" />
         </Col>
       </Row>
+    </Container>
   );
 };
 

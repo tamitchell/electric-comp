@@ -16,6 +16,14 @@ import {
   FormText
 } from "reactstrap";
 
+export const StyledContainer = (props) => {
+  return (<Container className="hero-container" fluid={true}>
+    <Row>
+        <ParentForm />
+    </Row>
+  </Container>)
+}
+
 class ParentForm extends Component {
   constructor() {
     super();
@@ -60,7 +68,6 @@ handleChange = input => e => {
                 handleChange={this.handleChange}
                 values={values}
                 />)
-              break;
           case 2:
                 return (<PersonalDetails 
                 nextStep={this.nextStep}
@@ -68,7 +75,6 @@ handleChange = input => e => {
                 handleChange={this.handleChange}
                 values={values}
                 />)
-                break;
           case 3:
             return (<FormConfirmation
                 nextStep={this.nextStep}
@@ -76,14 +82,12 @@ handleChange = input => e => {
                 handleChange={this.handleChange}
                 values={values}
                 />)
-            break;
           case 4:
                 return (<h1>Message Sent</h1>)
+          default:
+            break;      
       }
-    return (
-        <h1>hi</h1>
-    );
   }
 }
 
-export default ParentForm;
+// export default ParentForm;

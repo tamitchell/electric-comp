@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from "reactstrap";
 
 const Services = () => {
   return (
+    <Container className="services-container" fluid={true}>
       <Row className="row-outer">
         <h3>Top Electrical Services</h3>
         <Row className="row-inner">
@@ -36,6 +37,7 @@ const Services = () => {
         </Row>
         <Button>More Services</Button>
       </Row>
+    </Container>
   );
 };
 

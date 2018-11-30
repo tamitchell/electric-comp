@@ -4,6 +4,7 @@ import { Container, Row, Button } from "reactstrap";
 const Hero = () => {
   return (
     <header>
+      <Container className="hero-container" fluid={true}>
         <Row>
           <span>
             <h1>
@@ -21,6 +22,7 @@ const Hero = () => {
             <Button>Contact Us</Button>
           </span>
         </Row>
+      </Container>
     </header>
   );
 };
