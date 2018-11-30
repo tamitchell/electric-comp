@@ -16,13 +16,13 @@
   }
 }
 
-.hero {
+.hero-container {
   background-color: $mainred;
   background-image: url("../img/hero-img-dark.png");
   @include backgroundimg;
 }
 
-.home-about-container {
+.about-container {
   .col:first-child {
     height: 100%;
     display: flex;
@@ -43,7 +43,7 @@
   }
 }
 
-.home-services-container {
+.services-container {
   text-align: center;
   text-transform: uppercase;
   background-color: $yellow;
@@ -62,7 +62,7 @@
   }
   .btn {
     display: inline-block;
-    margin: 0 auto;
+    margin: 0 auto; 
     @include btn(black, black);
   }
 }
