@@ -47,6 +47,10 @@
   text-align: center;
   text-transform: uppercase;
   background-color: $yellow;
+  height: auto;
+  h3 {
+    color: black;
+  }
   .row-inner {
     flex-flow: row wrap;
     .col {
@@ -66,3 +70,49 @@
     @include btn(black, black);
   }
 }
+
+.red-container {
+  background-color:$mainred;
+  .row {
+    flex-flow: row nowrap;
+    .col {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      text-align: center;
+      .message-detail {
+        @extend .col;
+        height: 100%;
+      }
+      }
+      .btn {
+        display:inline-block;
+        align-self:center;
+        margin: 1em;
+        @include btn(white, transparent, white, black);
+      }
+  }
+}
+
+.confirmation-form-container {
+  height: auto;
+  input[name=fullName] {
+        display: inline-block;
+        width:100%;
+        min-width: 150px;
+        max-width: 300px;
+        margin: 0.5em;
+     }
+     input[name=subject] {
+      width: 100%;
+      min-width: 150px;
+      max-width: 600px;
+     }
+     input[name=message] {
+       width: !important 100%;
+       min-width: 150px;
+       max-width: 600px;
+       max-height: 300px;
+
+     }
+    }

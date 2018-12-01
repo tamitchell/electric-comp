@@ -1,0 +1,49 @@
+.form-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border: 1px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 7px;
+  outline: none;
+  &:checked::before {
+    position: absolute;
+    font: 13px/1 "Open Sans", sans-serif;
+    left: 11px;
+    top: 7px;
+    content: "\02143";
+    transform: rotate(40deg);
+  }
+  &:hover {
+    background-color: transparent;
+  }
+  &:checked {
+    background-color: transparent;
+  }
+}
+label {
+  font: 300 16px/1.7 "Open Sans", sans-serif;
+  color: white;
+  cursor: pointer;
+}
+
+.form-group-wrapper {
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: center;
+     .form-group{
+          text-align: left;
+          min-width: 200px;
+          padding: 1em;
+          border: 1px solid red;
+     }
+}
