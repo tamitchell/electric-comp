@@ -1,11 +1,33 @@
 import React, { Component } from "react";
+import FormSuccess from "./FormSucess";
+import FormError from "./FormError";
 import { Button, FormGroup, Label, Input } from "reactstrap";
-class FormConfirmation extends Component {
+class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fullName: {
+        firstName: "",
+        lastName: ""
+      },
+      message: {},
+      email: "",
+      phoneNumber: ""
+    };
+  }
+
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
+  };
+
+
   render() {
+    const { fullName, message, email, phoneNumber } = this.state;
+    const values = { fullName, message, email, phoneNumber };
     return (
       <fieldset className="confirmation-form-container">
-        <h4>Message Confirmation</h4>
-        <h5>Take one last look to make sure everthing looks right.</h5>
+        <h4>Questions? Comments? Send Us a Message</h4>
+        <h5>Be sure to take one last look to make sure everthing looks right.</h5>
         <FormGroup>
           <Input type="text" name="fullName" placeholder="First Name" />
           <Input type="text" name="fullName" placeholder="Last Name" />
@@ -22,4 +44,4 @@ class FormConfirmation extends Component {
   }
 }
 
-export default FormConfirmation;
+export default Form
