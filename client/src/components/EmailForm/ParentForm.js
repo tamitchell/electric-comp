@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Form from "./Form";
+import React from "react";
+import Form from "./FormContainer";
 import { Container, Col, Row, Fade } from "reactstrap";
 
 export const StyledContainer = props => {

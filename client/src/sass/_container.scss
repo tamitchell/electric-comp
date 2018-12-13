@@ -4,6 +4,8 @@
 .container-fluid {
   position: relative;
   height: 100vh;
+  padding: 4em;
+
   .row {
     height: 100%;
     padding: 15px;
@@ -24,10 +26,10 @@
 
 .about-container {
   .col:first-child {
-    height: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    border: 1px solid red;
   }
   .col:nth-child(2) {
     position: absolute;
@@ -48,6 +50,7 @@
   text-transform: uppercase;
   background-color: $yellow;
   height: auto;
+  padding: 4em;
   h3 {
     color: black;
   }
@@ -56,23 +59,25 @@
     .col {
       width: 40%;
       li {
-          text-align: left;
-          text-transform: capitalize;
-          font-size: 20px;
-          font-weight: 400;
-          padding: 15px;
+        text-align: left;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 15px;
       }
     }
   }
   .btn {
     display: inline-block;
-    margin: 0 auto; 
+    margin: 0 auto;
     @include btn(black, black);
   }
 }
 
 .red-container {
-  background-color:$mainred;
+  min-height: 800px;
+  height: auto;
+  background-color: $mainred;
   .row {
     flex-flow: row nowrap;
     .col {
@@ -84,35 +89,32 @@
         @extend .col;
         height: 100%;
       }
-      }
-      .btn {
-        display:inline-block;
-        align-self:center;
-        margin: 1em;
-        @include btn(white, transparent, white, black);
-      }
+    }
+    .btn {
+      display: inline-block;
+      align-self: center;
+      margin: 1em;
+      @include btn(white, transparent, white, black);
+    }
   }
 }
 
 .confirmation-form-container {
-  height: auto;
-  input[name=fullName] {
-        display: inline-block;
-        width:100%;
-        min-width: 150px;
-        max-width: 300px;
-        margin: 0.5em;
-     }
-     input[name=subject] {
-      width: 100%;
-      min-width: 150px;
-      max-width: 600px;
-     }
-     input[name=message] {
-       width: !important 100%;
-       min-width: 150px;
-       max-width: 600px;
-       max-height: 300px;
-
-     }
-    }
+  padding: 30px;
+  input[name="firstName"],
+  input[name="lastName"],
+  input[name="email"],
+  input[name="phoneNumber"] {
+    display: inline-block;
+    min-width: 150px;
+    max-width: 300px;
+    margin: 0.5em;
+  }
+  input[name="subject"] {
+    min-width: 150px;
+  }
+  input[name="message"] {
+    min-width: 150px;
+    max-height: 200px;
+  }
+}
