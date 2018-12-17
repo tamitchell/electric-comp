@@ -1,0 +1,9 @@
+.footer {
+    max-height: auto;
+    display: inline-flex;
+    flex-flow: row wrap;
+    background-color: black;
+    .col {
+        border: 1px solid blue;
+    }
+}

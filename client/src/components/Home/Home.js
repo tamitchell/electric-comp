@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Hero from "./Hero.js";
 import About from "./About";
 import Services from "./Services";
-import { StyledContainer } from '../EmailForm/ParentForm';
+import MeetTheTeam from "./MeetTheTeam";
+import { StyledContainer } from "../EmailForm/ParentForm";
 export default class Home extends Component {
   render() {
     return (
@@ -10,6 +11,7 @@ export default class Home extends Component {
         <Hero />
         <About />
         <Services />
+        <MeetTheTeam />
         <StyledContainer />
       </main>
     );

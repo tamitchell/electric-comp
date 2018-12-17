@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation.js";
+import Footer from "./Footer";
 import asyncComponent from './AsyncComponent'
 import "../sass/App.scss";
 
@@ -15,6 +16,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
+        <Footer/>
       </div>
     );
   }
