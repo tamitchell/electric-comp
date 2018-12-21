@@ -17,16 +17,15 @@ class FormContainer extends Component {
         email: "",
         phoneNumber: ""
       },
-      loading: false,
-      success: null
+      status: null,
+      formSubmitted: null
     };
   }
 
   handleChange = e => {
-    const { input } = this.state;
-
-    input[e.target.name] = e.target.value;
     e.preventDefault();
+    const { input } = this.state;
+    input[e.target.name] = e.target.value;
     this.setState({ input: input });
     console.log(this.state);
   };
@@ -38,21 +37,31 @@ class FormContainer extends Component {
       .post(`https://www.enformed.io/${key}/`, this.state.input)
       .then(response =>
         response.statusText === "OK"
-          ? this.setState({ success: true })
-          : this.setState({ success: false })
+          ? this.setState({
+              formSubmitted: true,
+              status: true
+            })
+          : this.setState({
+              formSubmitted: true,
+              status: false
+            })
       )
       .catch(error => console.log(error));
   };
 
   render() {
-    let loading = this.state.loading;
-    let success = this.state.success;
+    let status = this.state.status;
+    let formSubmitted = this.state.formSubmitted;
 
     return (
       <div>
-        {success === true ? <FormStatus status={success}/> : <Form handleChange={this.handleChange} onSubmit={this.onSubmit} />}
+        {formSubmitted === true ? (
+          <FormStatus status={status} />
+        ) : (
+          <Form handleChange={this.handleChange} onSubmit={this.onSubmit} />
+        )}
       </div>
-    )
+    );
   }
 }
 
