@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import FormSuccess from "./FormSucess";
-import FormError from "./FormError";
+import { FormStatus } from "./FormStatus";
+import Form from "./Form";
 import axios from "axios";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const key = "oizmqt5h";
 
@@ -10,111 +9,50 @@ class FormContainer extends Component {
   constructor() {
     super();
     this.state = {
-      firstName: "",
-      lastName: "",
-      subject: "",
-      message: "",
-      email: "",
-      phoneNumber: ""
+      input: {
+        firstName: "",
+        lastName: "",
+        subject: "",
+        message: "",
+        email: "",
+        phoneNumber: ""
+      },
+      loading: false,
+      success: null
     };
   }
 
-  handleChange = input => e => {
+  handleChange = e => {
+    const { input } = this.state;
+
+    input[e.target.name] = e.target.value;
     e.preventDefault();
-    this.setState({ [input]: e.target.value });
+    this.setState({ input: input });
     console.log(this.state);
   };
 
-  onSubmit = () => {
+  onSubmit = e => {
+    e.preventDefault();
     axios.defaults.headers.post["Content-Type"] = "application/json";
     axios
-      .post(`https://www.enformed.io/${key}/`)
-      .then(response => console.log(response))
+      .post(`https://www.enformed.io/${key}/`, this.state.input)
+      .then(response =>
+        response.statusText === "OK"
+          ? this.setState({ success: true })
+          : this.setState({ success: false })
+      )
       .catch(error => console.log(error));
   };
 
   render() {
-    const {
-      firstName,
-      lastName,
-      message,
-      subject,
-      email,
-      phoneNumber
-    } = this.state;
-    // const values = {
-    //   fullName: firstName,
-    //   fullName: lastName,
-    //   message,
-    //   subject,
-    //   email,
-    //   phoneNumber
-    // };
+    let loading = this.state.loading;
+    let success = this.state.success;
+
     return (
-      <Form
-        action="https://www.enformed.io/oizmqt5h"
-        method="post"
-        className="confirmation-form-container"
-        onSubmit={e => this.onSubmit(e)}
-      >
-        <h4>Questions? Comments? Send Us a Message</h4>
-        <h5>
-          Be sure to take one last look to make sure everthing looks right.
-        </h5>
-        <FormGroup>
-          <Input
-            type="text"
-            defaultValue={firstName}
-            onChange={this.handleChange}
-            name="firstName"
-            placeholder="First Name"
-          />
-          <Input
-            type="text"
-            defaultValue={lastName}
-            onChange={this.handleChange}
-            name="lastName"
-            placeholder="Last Name"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            type="text"
-            defaultValue={email}
-            onChange={this.handleChange}
-            name="email"
-            placeholder="Email"
-          />
-          <Input
-            type="text"
-            defaultValue={phoneNumber}
-            onChange={this.handleChange}
-            name="phoneNumber"
-            placeholder="(555) 555 - 5555"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            type="text"
-            defaultValue={subject}
-            onChange={this.handleChange}
-            name="subject"
-            placeholder="Subject Line"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Input
-            type="textarea"
-            defaultValue={message}
-            onChange={this.handleChange}
-            placeholder="Enter text here"
-            name="message"
-          />
-          <input type="hidden" name="*honeypot" />
-        </FormGroup>
-        <Button type="submit">Submit</Button>
-      </Form>
-    );
+      <div>
+        {success === true ? <FormStatus status={success}/> : <Form handleChange={this.handleChange} onSubmit={this.onSubmit} />}
+      </div>
+    )
   }
 }
 

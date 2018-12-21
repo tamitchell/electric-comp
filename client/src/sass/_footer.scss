@@ -1,9 +1,17 @@
 .footer {
     max-height: auto;
-    display: inline-flex;
-    flex-flow: row wrap;
     background-color: black;
+    .row{
+        display: inline-flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        border:1px solid yellow;
+        max-height: 200px;
+        width: 100%;
+    }
     .col {
+        max-width: 300px;
+        height: inherit;
         border: 1px solid blue;
     }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./FormContainer";
+import FormContainer from "./FormContainer";
 import { Container, Col, Row, Fade } from "reactstrap";
 
 export const StyledContainer = props => {
@@ -7,7 +7,7 @@ export const StyledContainer = props => {
     <Container className="red-container" fluid={true}>
       <Row>
         <Col lg={7} className="col">
-          <Form />
+          <FormContainer />
         </Col>
       </Row>
     </Container>

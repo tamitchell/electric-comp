@@ -5,8 +5,7 @@ import {
   Col,
   Carousel,
   CarouselItem,
-  CarouselControl,
-  CarouselCaption
+  CarouselControl
 } from "reactstrap";
 
 const items = [
@@ -110,8 +109,8 @@ export default class MeetTheTeam extends Component {
 
         <Carousel
           activeIndex={activeIndex}
-          next={this.next}
-          previous={this.previous}
+          next={this.nextSlide}
+          previous={this.previousSlide}
         >
           {slides}
           <CarouselControl
