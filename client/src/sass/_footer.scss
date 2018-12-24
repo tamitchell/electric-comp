@@ -1,17 +1,30 @@
 .footer {
-    max-height: auto;
-    background-color: black;
-    .row{
-        display: inline-flex;
-        justify-content: center;
-        flex-flow: column wrap;
-        border:1px solid yellow;
-        max-height: 200px;
-        width: 100%;
+    height: auto !important;
+  background-color: black;
+  .row {
+    height: auto !important;
+    text-align: center;
+    min-width: 100%;
+    div {
+      img {
+        margin: 0.5em;
+        width: 20px;
+        min-width: auto;
+        height: auto !important;
+      }
+      h5 {
+        text-align: left;
+      }
+      text-align: left;
+      margin: 1em;
+      width: 300px;
+      display: inline-block;
     }
-    .col {
-        max-width: 300px;
-        height: inherit;
-        border: 1px solid blue;
-    }
+  }
+  .row:nth-of-type(2) {
+      div {
+          margin: 0 auto;
+          text-align: center;
+      }
+  }
 }
