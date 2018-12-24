@@ -8,15 +8,9 @@ const key = "oizmqt5h";
 class FormContainer extends Component {
   constructor() {
     super();
+
     this.state = {
-      input: {
-        firstName: "",
-        lastName: "",
-        subject: "",
-        message: "",
-        email: "",
-        phoneNumber: ""
-      },
+      input: {},
       status: null,
       formSubmitted: null
     };
@@ -32,21 +26,29 @@ class FormContainer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    axios.defaults.headers.post["Content-Type"] = "application/json";
-    axios
-      .post(`https://www.enformed.io/${key}/`, this.state.input)
-      .then(response =>
-        response.statusText === "OK"
-          ? this.setState({
-              formSubmitted: true,
-              status: true
-            })
-          : this.setState({
-              formSubmitted: true,
-              status: false
-            })
-      )
-      .catch(error => console.log(error));
+
+    const validation = this.validator.validate(this.state);
+    this.setState({ validation });
+
+    if (validation.isValid) {
+      axios.defaults.headers.post["Content-Type"] = "application/json";
+      axios
+        .post(`https://www.enformed.io/${key}/`, this.state.input)
+        .then(response =>
+         { 
+           console.log(response.status)
+           response.statusText === "OK"
+            ? this.setState({
+                formSubmitted: true,
+                status: true
+              })
+            : this.setState({
+                formSubmitted: true,
+                status: false
+              })}
+        )
+        .catch(error => console.log(error));
+    }
   };
 
   render() {
@@ -58,7 +60,11 @@ class FormContainer extends Component {
         {formSubmitted === true ? (
           <FormStatus status={status} />
         ) : (
-          <Form handleChange={this.handleChange} onSubmit={this.onSubmit} />
+          <Form
+            handleChange={this.handleChange}
+            formSubmitted={this.state.formSubmitted}
+            onSubmit={this.onSubmit}
+          />
         )}
       </div>
     );

@@ -6,6 +6,10 @@
 @import "./form.scss";
 
 body {
+  min-height: 100vh; /* will cover the 100% of viewport */
+ display: block;
+ position: relative;
+  padding-bottom: 600px;
   h1 {
     font-size: 8vmax;
     font-weight: 800;
@@ -88,6 +92,7 @@ body {
   .btn {
     @include btn;
   }
+  
 }
 
 
