@@ -2,42 +2,11 @@ import React, { Component } from "react";
 import {
   Container,
   Row,
-  Col,
   Carousel,
   CarouselItem,
   CarouselControl
 } from "reactstrap";
-
-const items = [
-  {
-    src: require("../../img/team1.jpg"),
-    altText: "Jeff Benzos",
-    memberName: "Jeff Benzos",
-    jobPosition: "Head of Finance",
-    caption: `Fashion axe wayfarers Wes Anderson cray lo-fi you probably haven't keytar raw denim pop-upon Cosby shabby \n single-origin coffee disrupt semiotics High Life try-hard Austin banjo normcore gastropub Echo Park actually gentrify slow-carb four loko Pinterest mustache whatever paleo flexitarian`
-  },
-  {
-    src: require("../../img/team2.jpeg"),
-    altText: "Slide 2",
-    memberName: "Dr. Martin Lucas",
-    jobPosition: "Operations Manager",
-    caption: `Fashion axe wayfarers Wes Anderson cray lo-fi you probably haven't keytar raw denim pop-upon Cosby shabby \r mlkshk DIY farm-to-table retro lomo Neutra direct trade`
-  },
-  {
-    src: require("../../img/team3.jpg"),
-    altText: "Slide 3",
-    memberName: "Lana Peakes",
-    jobPosition: "Social Media Coordinator",
-    caption: `Fashion axe wayfarers Wes Anderson cray lo-fi you probably haven't keytar raw denim pop-upon Cosby shabby \r mlkshk DIY farm-to-table retro lomo Neutra direct trade  Tonx street art VHS ennui banh mi literally hella Schlitz vinyl hashtag beard fixie blog cliche locavore cred`
-  },
-  {
-    src: require("../../img/team4.jpg"),
-    altText: "Slide 4",
-    memberName: "Tiko Richardson",
-    jobPosition: "Chief Architect",
-    caption: `Fashion axe wayfarers Wes Anderson cray lo-fi you probably haven't keytar raw denim pop-upon Cosby shabby \r mlkshk DIY farm-to-table retro lomo Neutra direct trade `
-  }
-];
+import { items } from "./TeamMembers";
 
 export default class MeetTheTeam extends Component {
   constructor(props) {
@@ -87,17 +56,14 @@ export default class MeetTheTeam extends Component {
           key={item.src}
         >
           <Row>
-            <Col className="inner-col" lg={6} md={12}>
+            <div className="inner-col">
               <h6>{item.memberName}</h6>
               <img src={item.src} alt={item.altText} />
               <h6>{item.jobPosition}</h6>
-            </Col>
-            <Col
-              lg={6}
-              className="inner-col d-none d-lg-block d-xl-block"
-            >
+            </div>
+            <div className="inner-col d-none d-lg-block d-xl-block">
               <p>{item.caption}</p>
-            </Col>
+            </div>
           </Row>
         </CarouselItem>
       );
@@ -108,6 +74,7 @@ export default class MeetTheTeam extends Component {
         <h2 className="d-none d-lg-block d-xl-block">Meet The Team</h2>
 
         <Carousel
+          interval={false}
           activeIndex={activeIndex}
           next={this.nextSlide}
           previous={this.previousSlide}

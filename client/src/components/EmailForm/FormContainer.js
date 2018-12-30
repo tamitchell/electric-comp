@@ -26,11 +26,6 @@ class FormContainer extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
-    const validation = this.validator.validate(this.state);
-    this.setState({ validation });
-
-    if (validation.isValid) {
       axios.defaults.headers.post["Content-Type"] = "application/json";
       axios
         .post(`https://www.enformed.io/${key}/`, this.state.input)
@@ -48,7 +43,6 @@ class FormContainer extends Component {
               })}
         )
         .catch(error => console.log(error));
-    }
   };
 
   render() {
