@@ -8,7 +8,8 @@ const Hero = () => {
         <Row>
           <span>
             <h1>
-              Don't be left <br /> in the Dark
+              DC's Finest <br />
+              Electricians
             </h1>
           </span>
 

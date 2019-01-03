@@ -1,8 +1,8 @@
 import React from "react";
 import FormContainer from "./FormContainer";
-import { Container, Col, Row, Fade } from "reactstrap";
+import { Container, Col, Row} from "reactstrap";
 
-export const StyledContainer = props => {
+export const StyledContainer = () => {
   return (
     <Container className="red-container" fluid={true}>
       <Row>

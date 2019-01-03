@@ -7,16 +7,58 @@ const Services = () => {
       <Row className="row-outer">
         <h3>Top Electrical Services</h3>
         <Row className="row-inner">
-            <ul>
-              <li>Build Outs</li>
-              <li>CAT5 & CAT5E Cabling</li>
-              <li>Computer & Circuits</li>
-              <li>Electrical Distribution Panel Inspections</li>
-              <li>Fluorescent Ballast Replacements</li>
-              <li>Generators</li>
-              <li>Heavy-Ups Panel Upgrades</li>
-              <li>Repair, Replacement & Installation Service</li>
-            </ul>
+          <ul>
+            <li>
+              <img
+                src={require("../../img/icons/build-outs.png")}
+                alt="Build Outs"
+              />{" "}
+              <p>Build Outs</p>
+            </li>
+            <li>
+              <img src={require("../../img/icons/cable.png")} alt="Cabling" />
+              <p>CAT5 & CAT5E Cabling</p>
+            </li>
+            <li>
+              <img
+                src={require("../../img/icons/circuit.png")}
+                alt="Circuits"
+              />{" "}
+              <p>Computer & Circuits</p>
+            </li>
+            <li>
+              <img
+                src={require("../../img/icons/electrical-panel.png")}
+                alt="Electrical Panel"
+              />
+              <p>Electrical Distribution Panel Inspections</p>
+            </li>
+            <li>
+              <img
+                src={require("../../img/icons/light-bulb.png")}
+                alt="Light bulb"
+              />
+              <p>Fluorescent Ballast Replacements</p>
+            </li>
+            <li>
+              <img
+                src={require("../../img/icons/generator.png")}
+                alt="Generators"
+              />
+              <p>Generators</p>
+            </li>
+            <li>
+              <img
+                src={require("../../img/icons/heavy-panel.png")}
+                alt="Heavy Panels"
+              />
+              <p>Heavy-Ups Panel Upgrades</p>
+            </li>
+            <li>
+              <img src={require("../../img/icons/repair.png")} alt="Repairs" />
+              <p>Repair, Replacement & Installation Service</p>
+            </li>
+          </ul>
         </Row>
         <Button>More Services</Button>
       </Row>

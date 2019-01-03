@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {
   Container,
-  Row,
+  Col,
   Carousel,
   CarouselItem,
   CarouselControl
@@ -55,23 +55,21 @@ export default class MeetTheTeam extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <Row>
-            <div className="inner-col">
+            <Col xs="12" sm="12" md="6" lg="6" xl="6" className="inner-col">
               <h6>{item.memberName}</h6>
               <img src={item.src} alt={item.altText} />
               <h6>{item.jobPosition}</h6>
-            </div>
-            <div className="inner-col d-none d-lg-block d-xl-block">
+          </Col>
+            <Col md="6" lg="6" xl="6" className="inner-col d-none d-md-block d-lg-block d-xl-block">
               <p>{item.caption}</p>
-            </div>
-          </Row>
+            </Col>
         </CarouselItem>
       );
     });
 
     return (
       <Container fluid={true} className="meet-the-team-container">
-        <h2 className="d-none d-lg-block d-xl-block">Meet The Team</h2>
+        <h2 className="d-none d-md-block d-lg-block d-xl-block">Meet The Team</h2>
 
         <Carousel
           interval={false}
