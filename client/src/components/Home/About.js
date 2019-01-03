@@ -1,10 +1,9 @@
 import React from "react";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Col, Button } from "reactstrap";
 
 const About = () => {
   return (
     <Container className="about-container" fluid={true}>
-      <Row>
         <Col className="col" lg={5}>
           <h2>Introduce Your Company Here</h2>
           <p>
@@ -34,7 +33,6 @@ const About = () => {
         <Col className="d-none d-lg-block d-xl-block">
         <img src={require("../../img/cables.jpg")} alt="cables" />
         </Col>
-      </Row>
     </Container>
   );
 };
