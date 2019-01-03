@@ -28,7 +28,7 @@
 
 .about-container {
   padding: 4em;
-  min-height: auto;
+  min-height: auto !important;
   .col:first-child {
     display: flex;
     flex-flow: column nowrap;
@@ -61,17 +61,34 @@
   .row-inner {
     display: flex;
     flex-flow: row wrap;
-    text-align: left;
-      img {
-        margin-top: 2em;
-          width: 80px;
-          min-width: 80px;
-        }
-      p {
-        min-width: 100%;
-        padding-top: 15px;
-        text-transform: capitalize;
+    ul {
+      list-style-type: none;
+      width: 100%;
+      height: 100%;
+      display: inline-flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      padding-inline-start: 0px;
+      padding: 0 4em;
+      li {
+        max-width: 200px;
+        width: 40%;
+        height: 200px;
+        max-height: 200px;
+        margin: 0.5em;
+        text-align: center;
       }
+    }
+    img {
+      margin-top: 2em;
+      width: 80px;
+      min-width: 80px;
+    }
+    p {
+      min-width: 100%;
+      padding-top: 15px;
+      text-transform: capitalize;
+    }
   }
   .btn {
     display: inline-block;
