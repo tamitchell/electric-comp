@@ -56,7 +56,7 @@ const Services = () => {
             </li>
             <li>
               <img src={require("../../img/icons/repair.png")} alt="Repairs" />
-              <p>Repair, Replacement & Installation Service</p>
+              <p>Troubleshooting, Repair & Replacement</p>
             </li>
           </ul>
         </Row>
