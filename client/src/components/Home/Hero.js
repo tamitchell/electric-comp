@@ -15,7 +15,7 @@ const Hero = () => {
 
           <span>
             <h6>
-              Interesting Tagline here.
+              Building a Brigther Future! 
             </h6>
           </span>
 
