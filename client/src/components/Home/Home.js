@@ -11,7 +11,6 @@ export default class Home extends Component {
         <Hero />
         <About />
         <Services />
-        <MeetTheTeam />
         <StyledContainer />
       </main>
     );
