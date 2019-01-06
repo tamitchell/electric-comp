@@ -3,8 +3,6 @@ import { FormStatus } from "./FormStatus";
 import Form from "./Form";
 import axios from "axios";
 
-const key = "oizmqt5h";
-
 class FormContainer extends Component {
   constructor() {
     super();
@@ -28,7 +26,7 @@ class FormContainer extends Component {
     e.preventDefault();
       axios.defaults.headers.post["Content-Type"] = "application/json";
       axios
-        .post(`https://www.enformed.io/${key}/`, this.state.input)
+        .post(`https://www.enformed.io/${process.env.REACT_APP_API_KEY}/`, this.state.input)
         .then(response =>
          { 
            console.log(response.status)
