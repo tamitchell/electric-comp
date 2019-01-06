@@ -90,7 +90,7 @@ export default class FormComponent extends Component {
             required
           />
           <input type="hidden" name="*honeypot" />
-          <input type="hidden" name="*default_email" value="neyer.torrico@gmail.com" />
+          <input type="hidden" name="*default_email" value="DiversifiedElectricInc@gmail.com" />
         </FormGroup>
         <Button type="submit">Submit</Button>
       </Form>

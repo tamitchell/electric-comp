@@ -17,7 +17,7 @@ const Services = () => {
             </li>
             <li>
               <img src={require("../../img/icons/cable.png")} alt="Cabling" />
-              <p>CAT5 & CAT5E Cabling</p>
+              <p>Fiber & CAT5E/CAT6 Cabling</p>
             </li>
             <li>
               <img

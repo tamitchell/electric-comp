@@ -20,7 +20,7 @@ const Footer = () => {
           © 2018 Copyright:
           <a href="https://mdbootstrap.com/education/bootstrap/">
             {" "}
-            Diverse Electric
+            Diversified Electric Services Inc.
           </a>
           {" "}All Rights Reserved.
         </div>
