@@ -7,7 +7,7 @@ const About = () => {
         <Col className="col" lg={5}>
           <h2>Diversified Electric Services Inc.</h2>
           <p>
-            We offer a range of electrical services, including panel upgrades, 
+            We offer a range of electrical services, including panel upgrades , 
             new lighting installations, home inspections and code corrections, 
             circuit restorations, and fixture replacements. Our friendly and 
             helpful Fairfax, VA electricians are truly here to make your life 
