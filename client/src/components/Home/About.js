@@ -7,12 +7,13 @@ const About = () => {
         <Col className="col" lg={5}>
           <h2>Diversified Electric Services Inc.</h2>
           <p>
-            Letterpress Austin hella Blue Bottle Bushwick iPhone aesthetic Wes
-            Anderson Tumblr sartorial Vice wolf narwhal banh mi seitan
-            post-ironic chia squid cardigan pour-over VHS tofu ennui deep v
-            brunch ugh Neutra keytar mumblecore dreamcatcher Marfa cornhole
-            craft beer chillwave trust fund paleo asymmetrical scenester Odd
-            Future jean shorts put a bird on it ethical vinyl.{" "}
+            We offer a range of electrical services, including panel upgrades, 
+            new lighting installations, home inspections and code corrections, 
+            circuit restorations, and fixture replacements. Our friendly and 
+            helpful Fairfax, VA electricians are truly here to make your life 
+            easier. We offer same-day services and upfront pricing quotes for 
+            that reason. We also know that life can get busy, which is why we 
+            work around your schedule when you need service.{" "}
           </p>
 
           <p>
