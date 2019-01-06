@@ -5,7 +5,7 @@ const About = () => {
   return (
     <Container className="about-container" fluid={true}>
         <Col className="col" lg={5}>
-          <h2>Introduce Your Company Here</h2>
+          <h2>Diversified Electric Services Inc.</h2>
           <p>
             Letterpress Austin hella Blue Bottle Bushwick iPhone aesthetic Wes
             Anderson Tumblr sartorial Vice wolf narwhal banh mi seitan
