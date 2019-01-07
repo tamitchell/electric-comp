@@ -26,7 +26,7 @@ class FormContainer extends Component {
     e.preventDefault();
       axios.defaults.headers.post["Content-Type"] = "application/json";
       axios
-        .post(`https://www.enformed.io/${"sk2rzse5"}/`, this.state.input)
+        .post(`https://www.enformed.io/sk2rzse5/`, this.state.input)
         .then(response =>
          { 
            console.log(response.status)
