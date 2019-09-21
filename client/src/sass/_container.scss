@@ -1,17 +1,13 @@
 @import "./variables";
 @import "./mixins";
+@import "./abstract";
 
-.container-fluid {
-  position: relative;
-  height: 100%;
-  padding: 0;
+.container-fluid, .container {
+  @extend .container-spacing;
+  @include flex;
   .row {
-    height: 100%;
-    padding: 15px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-content: center;
+    @extend .row-spacing;
+    @include flex;
     .col {
       height: 100%;
     }
@@ -19,35 +15,112 @@
 }
 
 .hero-container {
-  background-color: $mainred;
-  padding: 4em;
-  height: 90vh;
-  background-image: url("../img/hero-img.jpg");
+  height: 100vh;
+  background-image: url("../img/hero-img.png");
   @include backgroundimg;
+  .row {
+    margin: 13% 5%;
+  }
+  .reception {
+    align-self: center;
+    position: absolute;
+    z-index: 2;
+  }
+  .title-card {
+    @extend .centered-block;
+    @extend .top-title-text;
+    border: 2px solid black;
+    background-color: $icewhite;
+    max-width: 600px;
+    z-index: 1;
+    emphasis {
+        font-weight: 900;
+      }
+    .subtitle {
+      font-size: 2vw;
+    }
+  }
+
 }
 
 .about-container {
-  padding: 4em;
-  min-height: auto !important;
-  .col:first-child {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    min-height: 600px;
+  @include flex;
   }
-  .col:nth-child(2) {
-    position: absolute;
-    top: 0px;
-    right: 60px;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    overflow: hidden;
+
+  .statement-container {
+    max-width: 100%;
+    height: 100% !important;
+    align-self: center;
+    padding-top: 0 !important;
+    .header {
+      border: 4px solid $darkblue;
+      text-align: left;
+      margin-top: 20%;
+      height: 200px !important;
+      h2 {
+        @include header(3em);
+        margin-left: 35%;
+        text-align: left;
+      }
+      img  {
+        position: absolute;
+        right: 65%;
+        top: -90%;
+        max-width: 400px;     
+      }
+    }
+    .body {
+      margin-top: 3%;
+      padding-bottom: 0em !important;
+    }   
   }
-  .btn {
-    @include btn(black, black);
+ 
+  .team-container {
+    h2 {
+      @include header;
+      text-align: center;
+    }
+
   }
-}
+
+  .member-row {
+    flex-flow: row wrap;
+  }
+
+  .content-row {
+    flex-flow: column wrap;
+
+    .col {
+      border: 1px solid red;
+    }
+  }
+
+  .member-title-card {
+    display: inline-block;
+    max-width: 25vw;
+    margin: 1em;
+    background: none;
+    background-color: transparent;
+    border: none;
+    &:hover {
+      transform: scale(1.1);
+    }
+    .cardimage-container {
+      max-height: 25vw;
+      overflow: hidden;
+    }
+    .card-body {
+      .card-title {
+        @include header(2em);
+        font-style: normal;
+        font-weight: bolder;
+        padding-bottom: 0;
+      }
+      .card-subtitle {
+        @include header(1em, $yellow);
+      }
+    }
+  }
 
 .services-container {
   text-align: center;
@@ -152,3 +225,26 @@
 }
 
 
+.open-table-top {
+  transition: transform 500ms ease 0ms;
+  transform: translateY(-200px);
+  will-change: transform;
+}
+
+.open-table-bottom {
+  transition: transform 500ms ease 0ms;
+    transform: translateY(200px);
+    will-change: transform;
+}
+
+.close-table-top {
+  transition: transform 500ms ease 0ms;
+  transform: translateY(200px);
+  will-change: transform;
+}
+
+.close-table-bottom {
+  transition: transform 500ms ease 0ms;
+    transform: translateY(-200px);
+    will-change: transform;
+}

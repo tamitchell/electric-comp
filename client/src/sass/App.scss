@@ -4,12 +4,15 @@
 @import "./radio";
 @import "./footer";
 @import "./form.scss";
+@import "./button";
 
 body {
   min-height: 100vh; /* will cover the 100% of viewport */
   display: block;
   position: relative;
   padding-bottom: 300px;
+  background-color: rgba($paleblue, 0.37);
+
   h1 {
     font-size: 8vmax;
     font-weight: 800;
@@ -44,7 +47,6 @@ body {
   }
   img {
     width: 100%;
-    min-width: 100%;
   }
 
   input.form-control {
@@ -89,9 +91,6 @@ body {
     span {
       width: 100%;
     }
-  }
-  .btn {
-    @include btn;
   }
   .carousel {
     width: 100%;

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+// import { withRouter } from 'react-router-dom';    
 import {
   Collapse,
   Navbar,
@@ -8,6 +9,7 @@ import {
   NavItem
 } from "reactstrap";
 import {Link} from 'react-router-dom'
+const brandLogo = require('../img/diversified_electric_logo.png')
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -24,21 +26,27 @@ export default class Navigation extends Component {
         });
       }
       render(){
+        // if (location.pathname.match('/')){
+        //   return null;
+        // }
           return (
-            <nav>
-            <Navbar className="navigation" color="faded" expand="md">
-              <NavbarBrand href="/">Diverse Electric</NavbarBrand>
+            <nav className="nav-home">
+            <Navbar color="faded" expand="md">
               <NavbarToggler onClick={this.toggle} className="mr-2" />
               <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
+              <Nav navbar>
                 <NavItem>
-                  <Link to="/pricing">Pricing</Link>
+                  <Link to="/about">Who We Are</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/about">About</Link>
+                  <Link to="/services">What We Do</Link>
+                </NavItem>
+              <NavbarBrand href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
+                <NavItem>
+                  <Link to="/experience">Our Experience</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </NavItem>
               </Nav>
               </Collapse>

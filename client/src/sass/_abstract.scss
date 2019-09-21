@@ -1,0 +1,29 @@
+@import "./variables";
+
+.container-spacing {
+    position: relative;
+    padding: 4em;
+    height: 100%;
+}
+
+.row-spacing {
+    position: relative;
+    padding: 4em;
+    height: 100%;
+}
+
+.centered-block {
+    display: block;
+    margin: 0 auto;
+}
+
+.top-title-text {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 3vw;
+    color: $smokeyblack;   
+    padding: 1em;
+}
+
+

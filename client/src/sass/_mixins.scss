@@ -1,7 +1,10 @@
+@import './variables';
+
 @mixin flex {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    align-content: center;
     
 }
 
@@ -25,3 +28,9 @@
     }
   }
   
+  @mixin header($text-size: 2em, $color: $darkblue) {
+      font-size: $text-size;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color;     
+  }
