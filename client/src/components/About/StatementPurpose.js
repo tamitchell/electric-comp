@@ -1,14 +1,13 @@
 import React from "react";
 import { Container, Row, Button } from "reactstrap";
 import { FaAngleDoubleDown } from 'react-icons/fa';
-import { Transform, Fade } from 'react-animation-components'
-
+const lamp = require('../../img/hanging-lamp.png')
 
 const StatementPurpose = () => {
     return (
       <Container className="statement-container">
           <Row className="header">
-              <img className="lamp" src={require('../../img/hanging-lamp.png')} alt="hanging lamp" /> <h2>We Are <br/> Diversified Electric</h2>          
+              <img className="lamp" src={lamp} alt="hanging lamp" /> <h2>We Are <br/> Diversified Electric</h2>          
           </Row>
           <Row className="body">
                 <p>

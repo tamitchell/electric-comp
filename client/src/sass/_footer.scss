@@ -37,6 +37,7 @@
     }
 
     .pretend-footer {  
+      padding-top: 60px;
       h4 {
         @include header(1em);
       }

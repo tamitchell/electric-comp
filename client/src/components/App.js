@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { Container } from 'reactstrap';
 import Navigation from "./Navigation.js";
 import Footer from "./Footer";
 import asyncComponent from './AsyncComponent';
@@ -16,13 +17,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navigation />
+
+      <Navigation />
+        <Container className="app-container" fluid={true}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route path="/members/:memberName" component={MemberItem}/>
         </Switch>
         <Footer/>
+      </Container>
       </div>
     );
   }

@@ -1,5 +1,10 @@
 @import "./variables";
 
+h2 {
+    @include header;
+    text-align: center;
+  }
+
 .container-spacing {
     position: relative;
     padding: 4em;
@@ -26,4 +31,14 @@
     padding: 1em;
 }
 
+.border-color-reset {
+    background: none;
+    border: none;
+}
 
+
+.scale-up {
+    &:hover {
+        transform: scale(1.1);
+      }
+}
