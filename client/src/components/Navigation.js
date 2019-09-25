@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import { withRouter } from 'react-router-dom';    
 import {
   Collapse,
   Navbar,
@@ -36,19 +35,19 @@ export default class Navigation extends Component {
               <NavbarToggler onClick={this.toggle} className="mr-2" />
               <Collapse isOpen={this.state.isOpen} navbar>
               <Nav navbar>
-                <NavItem>
+                {/* <NavItem>
                   <Link to="/about">Who We Are</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/services">What We Do</Link>
-                </NavItem>
+                </NavItem> */}
               <NavbarBrand className="div__brand" href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
-                <NavItem>
+                {/* <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/contact">Contact Us</Link>
-                </NavItem>
+                </NavItem> */}
               </Nav>
               </Collapse>
             </Navbar>
