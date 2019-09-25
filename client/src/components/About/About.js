@@ -4,13 +4,6 @@ import MemberGroup from "./MemberGroup";
 
 export default class About extends Component {
 
-
-scrollToTop = () => {
-    this.el.scrollIntoView({ behavior: "smooth" });
-  }
-
-
-
   render() {
     return (
       <section className="about-container ">

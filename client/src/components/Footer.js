@@ -1,34 +1,52 @@
 import React from "react";
 import { Container, Row } from "reactstrap";
+import {Link} from 'react-router-dom'
 
-const style = {
-  textTransform: "lowercase"
-}
+const brandLogo = require('../img/diversified_electric_logo.png')
 
 const Footer = () => {
   return (
-    <Container className="footer" fluid={true}>       
-      <Row>
-        <div>
-            <p>Follow us on Social Media!</p>
-            <a href="https://twitter.com/"><img src={require("../img/social-media-svg/twitter.png")} alt="twitter" /></a>
-            <a href="https://www.instagram.com/"><img src={require("../img/social-media-svg/instagram.png")} alt="instagram" /></a>
-            <a href="https://www.facebook.com/"><img src={require("../img/social-media-svg/facebook.png")} alt="facebook" /></a>
-            <a href="https://www.linkedin.com/"><img src={require("../img/social-media-svg/linkedin-logo.png")} alt="linked in" /></a>
+    <div className="footer" fluid={true}>       
+      <div className="footer__inner footer__navigation">
+        <div className="footer__brand div__brand">
+          <img src={brandLogo} alt="Diversified Electric Services"/>
+          <p>Diversified Electric Services, Inc</p>
         </div>
-        <div className="footer-copyright text-center py-3">
-          © 2018 Copyright:
+        <div className="footer__links">
+        <Link to="/about">Who We Are</Link> |
+        <Link to="/services">What We Do</Link> |
+        <Link to="/experience">Our Experience</Link> |
+        <Link to="/contact">Contact Us</Link>
+        </div>
+        <div className="footer__contact">
+          <p>
+          5236 Saint Genevieve Place <br/>
+Alexandria, VA 22315 <br/>
+<a href="tel:+15713180076"> (571) 318-0076 </a> <br/> <a href="mailto:ntorrico@desielectric.com?subject=ClientQuestion">ntorrico@desielectric.com</a> <br/>
+          </p>
+        </div>
+      </div>
+      <div className="footer__inner footer__logistics">
+        <div className="footer__copyright">
+        <p> 
+          © 2019 Copyright:
           <a href="https://mdbootstrap.com/education/bootstrap/">
             {" "}
             Diversified Electric Services Inc.
           </a>
-          {" "}All Rights Reserved.
+          {" "}All Rights Reserved. |
+       Web Design by <a  href="https://tamitchell.github.io/">Tasha Mitchell</a></p>
         </div>
-        <div>
-        Contact the <a style={style} href="https://tamitchell.github.io/">developer.</a>
-        </div>
-      </Row>
-    </Container>
+        <div className="footer__socialmedia">
+            <a href="https://twitter.com/"><img className="footer_icon" src={require("../img/social-media-svg/twitter.png")} alt="twitter" /></a>
+            <a href="https://www.instagram.com/"><img className="footer_icon" src={require("../img/social-media-svg/instagram.png")} alt="instagram" /></a>
+            <a href="https://www.facebook.com/"><img className="footer_icon" src={require("../img/social-media-svg/facebook.png")} alt="facebook" /></a>
+            <a href="https://www.linkedin.com/"><img className="footer_icon" src={require("../img/social-media-svg/linkedin-logo.png")} alt="linked in" /></a>
+      </div>
+
+
+      </div>
+    </div>
   );
 };
 

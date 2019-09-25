@@ -4,37 +4,39 @@
 
 
 .app-container {
-  min-height: 100%; /* will cover the 100% of viewport */
-  display: block;
   position: relative;
-  padding: 80px 0 300px 0 !important;
   background-color: rgba($color: $darkblue, $alpha: 0.03)
 }
 
-.hero-container {
-  height: 100vh;
-  background-image: url("../img/hero-img.png");
-  @include backgroundimg;
+.hero__container {
+  height: 100%;
+  @include bg-img-full($hero-image, $size: cover);
+  // border: 1px solid red;
   .row {
-    margin: 13% 5%;
+    @include flex();
+    position: relative;
+    height: 100vh;
   }
-  .reception {
-    align-self: center;
+  .hero__prop-img {
+    @extend .centered-block;
+    background: none;
+    border: none;
+    width: 20vw;
     position: absolute;
-    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .title-card {
     @extend .centered-block;
     @extend .top-title-text;
-    border: 2px solid black;
+    border: 3px solid black;
     background-color: $icewhite;
-    max-width: 600px;
-    z-index: 1;
+    max-width: 500px;
     emphasis {
         font-weight: 900;
       }
     .subtitle {
-      font-size: 2vw;
+      font-size: 1vw;
     }
   }
 
@@ -135,6 +137,66 @@
       margin-top: 10%;
       padding: 0.375rem 0;
       text-transform: uppercase;
+    }
+  }
+
+  .main-services-container {
+    margin-top: 5%;
+    .row {
+      position: relative;
+    }
+    .title-card {
+      padding: 8em 2em;
+      background: $darkblue !important;
+      color: $icewhite;
+      width: 35%;
+      h1 {
+        @include header(2em, $icewhite);
+        text-align: left;
+        font-weight: bolder;
+      }
+    }
+    img {
+      position: absolute;
+      z-index: -1;
+      height: 75%;
+      left: 30%;
+    }
+  }
+
+  .add-services-container {
+    flex-flow:row wrap !important;
+    .service-card {
+      width: 70%;
+      .card-body .row {
+        margin-top: 5%;
+        align-items: flex-start;
+        flex-flow:row wrap !important;
+      }
+      h1 {
+        @include header(2em, $icewhite);
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: bolder;
+      }
+      subtitle {
+        font-style: italic;
+      }
+      ul,li {
+        list-style-type: none;
+        list-style: none;
+        padding-left: 0;      
+      }
+      .col {
+        width: 33%;
+        min-width: 200px;
+        max-width: 250px;
+
+      }
+
+    }
+    .row:nth-child(2) {
+      width: 30%;
     }
   }
 

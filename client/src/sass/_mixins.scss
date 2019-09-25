@@ -1,18 +1,17 @@
 @import './variables';
 
-@mixin flex {
+@mixin flex($direction: column, $wrap: nowrap, $horizontal-pos: center, $vertical-pos: center) {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-content: center;
-    
+    flex-flow: $direction $wrap;
+    justify-content: $horizontal-pos;
+    align-content: $vertical-pos;
+   
 }
 
-@mixin backgroundimg {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+@mixin bg-img-full( $path, $color: transparent, $repeat: no-repeat, $position: 0 0, $size: null ) {
+    background: $color url('#{$path--image}/#{$path}') $repeat $position;
+    background-size: $size;
+  }
 
 @mixin btn($border-color: white, $bkgrd-clr: transparent, $hover-color: white, $txtclr: black) {
     border-radius: 0;
@@ -33,4 +32,11 @@
       text-transform: uppercase;
       text-align: center;
       color: $color;     
+  }
+
+  @mixin font-component($color: $icewhite, $size: $body-fontsize, $alignment: left, $transform: normal) {
+      color: $color;
+      font-size: $size;
+      text-align: $alignment;
+      text-transform: $transform;
   }

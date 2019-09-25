@@ -16,6 +16,8 @@ nav {
     .nav-item {
         letter-spacing: 2px;
         margin: 0 25px;
+        align-self: center;
+        text-align: center;
         :hover, :active {
             letter-spacing: 2px;
             color: $icewhite;
@@ -62,19 +64,12 @@ nav {
 
 .nav-home {
     @include flex;
-    text-align: center;
+    @include font-component($transform: uppercase);
     .navbar-nav, .navbar {
+        width: 100%;
         margin: 0 auto;
-        margin-left: 10.6%;
-    }
-    .navbar-brand {
-        margin: 0 auto;
-        padding: 25px;
-        .logo-img {
-            width: 56px;
-            }
     }
     .nav-item {
-        align-self: center;
+        width: 100%;
     }
 }

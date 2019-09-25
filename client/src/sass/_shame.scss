@@ -3,20 +3,8 @@
 @import "./abstract";
 
 
-.container-fluid, .container {
-    @include flex;
-    padding-bottom: 100px;
-    .row {
-      @include flex;
-      .col {
-        @include flex;
-      }
-    }
-  }
-
 .card {
-    background: none !important;
-    border: none !important;
+    @extend .border-color-reset;
     width: 100%;
 
     .card-body {
@@ -30,4 +18,22 @@
           @include header(1em, $yellow);
         }
       }
+}
+
+.add-services-container {
+    .card {
+        padding: 2em;
+        background-color: $darkblue;
+        color: $icewhite;
+        border-radius: 0;
+    }
+    hr {
+        border-top: 1px solid $icewhite;
+    }
+    button {
+        @extend .border-color-reset;
+        text-transform: uppercase;
+        border: 1px solid $icewhite;
+        border-radius: 0;
+    }
 }

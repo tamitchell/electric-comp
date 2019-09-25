@@ -1,21 +1,10 @@
 @import "./variables";
+@import "./mixins";
 
 h2 {
     @include header;
     text-align: center;
   }
-
-.container-spacing {
-    position: relative;
-    padding: 4em;
-    height: 100%;
-}
-
-.row-spacing {
-    position: relative;
-    padding: 4em;
-    height: 100%;
-}
 
 .centered-block {
     display: block;
@@ -26,9 +15,13 @@ h2 {
     text-transform: uppercase;
     text-align: center;
     font-weight: lighter;
-    font-size: 3vw;
+    font-size: 2vw;
     color: $smokeyblack;   
     padding: 1em;
+}
+
+.title-divider {
+    border: 0.75px solid $smokeyblack;
 }
 
 .border-color-reset {
@@ -41,4 +34,14 @@ h2 {
     &:hover {
         transform: scale(1.1);
       }
+}
+
+.div__brand {
+    margin: 0 auto !important;
+    padding: 25px;
+    @include font-component($alignment: center, $transform: uppercase);
+    img {
+        margin: 1em !important;
+        width: 56px;
+        }
 }

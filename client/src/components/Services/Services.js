@@ -1,10 +1,13 @@
 import React from "react";
-import { Container, Row, Button } from "reactstrap";
+import MainServices from './MainServices';
+import AdditionalServices from './AdditionalServices';
 
 const Services = () => {
   return (
-    <Container className="services-container">
-    </Container>
+    <section className="services-container">
+      <MainServices />
+      <AdditionalServices />
+    </section>
   );
 };
 

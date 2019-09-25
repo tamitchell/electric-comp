@@ -13,20 +13,24 @@ const Home = asyncComponent(() =>
 const About = asyncComponent(() =>
     import('./About/About').then(module => module.default)
 )
+const Services = asyncComponent(() => 
+    import('./Services/Services').then(module => module.default)
+)
 class App extends Component {
   render() {
     return (
       <div className="App">
 
       <Navigation />
-        <Container className="app-container" fluid={true}>
+        <div className="app-container" fluid={true}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/services" component={Services}/>
           <Route path="/members/:memberName" component={MemberItem}/>
         </Switch>
+      </div>
         <Footer/>
-      </Container>
       </div>
     );
   }

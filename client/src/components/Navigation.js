@@ -26,9 +26,10 @@ export default class Navigation extends Component {
         });
       }
       render(){
-        // if (location.pathname.match('/')){
+        // if (this.props.location.pathname.match('/')){
         //   return null;
         // }
+        console.log(this.props.params);
           return (
             <nav className="nav-home">
             <Navbar color="faded" expand="md">
@@ -41,7 +42,7 @@ export default class Navigation extends Component {
                 <NavItem>
                   <Link to="/services">What We Do</Link>
                 </NavItem>
-              <NavbarBrand href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
+              <NavbarBrand className="div__brand" href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
                 <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
