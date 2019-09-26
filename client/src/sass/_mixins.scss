@@ -31,7 +31,8 @@
       font-size: $text-size;
       text-transform: uppercase;
       text-align: center;
-      color: $color;     
+      color: $color; 
+      font-weight: bolder;    
   }
 
   @mixin font-component($color: $icewhite, $size: $body-fontsize, $alignment: left, $transform: normal) {

@@ -2,19 +2,18 @@ import React from "react";
 import { Container, Row, Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { FaAngleDoubleUp } from 'react-icons/fa';
-import { Transform, Fade } from 'react-animation-components'
+// import { Transform, Fade } from 'react-animation-components'
 import { items } from "./MembersData";
-import CardStrcture from './CardStructure';
 
 
 const MemberGroup = (props) => {
 
     return (
         <Container className="team-container">
-            <Row className="header">
+            <div className="header">
                 <h2>Meet Our Leadership</h2>
-            </Row>
-            <Row className="member-row">
+            </div>
+            <div className="member-row">
                 {items.map((member, i) => {
                     return (
                         <Link key={i}
@@ -35,11 +34,11 @@ const MemberGroup = (props) => {
                         </Link>
                     )
                 })};
-          </Row>
-            <Row className="pretend-footer">
+          </div>
+            <div className="pretend-footer">
                 <h4>Back to the Top</h4>
-                <Button onClick={props.scrollToTop}><FaAngleDoubleUp /></Button>
-            </Row>
+                <Button><FaAngleDoubleUp /></Button>
+            </div>
         </Container>
     );
 };

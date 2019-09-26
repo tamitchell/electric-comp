@@ -8,8 +8,8 @@ const Hero = (props) => {
   return (
       <Container className="hero__container" fluid={true}>
         <Row>
-        <Transform className={props.toggleTable ? "reception close-table-top" : "reception open-table-top"} enterTransform="translateY(-80px)" in>
-        <button onClick={props.toggleTable()} className="hero__prop-img">
+        <Transform className={props.isOpen ? "reception close-table-top" : "reception open-table-top"} enterTransform="translateY(-80px)" in>
+        <button onClick={props.toggleTable} className="hero__prop-img">
         <img src={receptionUp} alt="Line art reception table" />
         </button>
         </Transform>
@@ -17,7 +17,7 @@ const Hero = (props) => {
         <Fade in enterOpacity={0.85}>
           <div className="title-card">
             <p className="title">
-             <emphasis>Desi</emphasis> Electric
+             <strong>Desi</strong> Electric
             </p>
             <hr className="title-divider"></hr>
             <p className="subtitle">
@@ -26,7 +26,7 @@ const Hero = (props) => {
           </div>
           </Fade>
           <Transform className="reception" enterTransform="translateY(80px)" in>
-          <button className="hero__prop-img">
+          <button onClick={props.toggleTable} className="hero__prop-img">
           <img src={receptionDown} alt="Line art reception table" />
           </button>
           </Transform>

@@ -1,12 +1,11 @@
 import React from "react";
-import { Container, Row } from "reactstrap";
 import {Link} from 'react-router-dom'
 
 const brandLogo = require('../img/diversified_electric_logo.png')
 
 const Footer = () => {
   return (
-    <div className="footer" fluid={true}>       
+    <div className="footer">       
       <div className="footer__inner footer__navigation">
         <div className="footer__brand div__brand">
           <img src={brandLogo} alt="Diversified Electric Services"/>

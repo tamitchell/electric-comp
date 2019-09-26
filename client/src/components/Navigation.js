@@ -8,9 +8,11 @@ import {
   NavItem
 } from "reactstrap";
 import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
+
 const brandLogo = require('../img/diversified_electric_logo.png')
 
-export default class Navigation extends Component {
+class Navigation extends Component {
     constructor(props) {
         super(props);
     
@@ -24,30 +26,35 @@ export default class Navigation extends Component {
           isOpen: !this.state.isOpen
         });
       }
+
+      componentWillReceiveProps() {
+        if(this.state.isOpen){this.toggle()}
+      }
       render(){
-        // if (this.props.location.pathname.match('/')){
-        //   return null;
-        // }
-        console.log(this.props.params);
+        let home = '/' 
+        let otherUrl = this.props.location.pathname
+        
+
           return (
-            <nav className="nav-home">
+            <nav className={home === otherUrl ? "nav-alt" : "nav-default"}>
             <Navbar color="faded" expand="md">
-              <NavbarToggler onClick={this.toggle} className="mr-2" />
+            <NavbarBrand className={home === otherUrl ? "div__brand d-none" : "div__brand d-none d-sm-block" } href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/> Diversified Electric Services, Inc</NavbarBrand>
+              <NavbarToggler onClick={this.toggle} className="mr-2 navbar-dark" />
               <Collapse isOpen={this.state.isOpen} navbar>
               <Nav navbar>
-                {/* <NavItem>
+                <NavItem>
                   <Link to="/about">Who We Are</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/services">What We Do</Link>
-                </NavItem> */}
-              <NavbarBrand className="div__brand" href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
-                {/* <NavItem>
+                </NavItem>
+              <NavbarBrand className={home === otherUrl ? "div__brand" : "div__brand d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
+                <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
-                <NavItem>
+                <NavItem className={home === otherUrl ? "" : "nav__contact"}>
                   <Link to="/contact">Contact Us</Link>
-                </NavItem> */}
+                </NavItem>
               </Nav>
               </Collapse>
             </Navbar>
@@ -55,3 +62,5 @@ export default class Navigation extends Component {
   );
 };
 }
+
+export default withRouter(Navigation)

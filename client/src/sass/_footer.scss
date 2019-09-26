@@ -30,7 +30,7 @@
 
     .footer__logistics {
       background-color: $nightblack;
-      @include flex($direction: row);
+      @include flex($direction: row, $wrap: wrap);
       div {
         padding: 0.5em;
         display: inline-flex;
@@ -46,9 +46,11 @@
 
 
     .pretend-footer {  
-      padding-top: 60px;
+      padding: 3em;
+      @include flex(column);
       h4 {
-        @include header(1em);
+
+        @include font-component($darkblue, 1em, center, uppercase);
       }
       .btn {
         @extend .centered-block;

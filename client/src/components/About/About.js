@@ -7,8 +7,8 @@ export default class About extends Component {
   render() {
     return (
       <section className="about-container ">
-        <StatementPurpose ref={(el) => { this.topOfPage = el; }}/>
-        <MemberGroup scrollToTop={this.scrollToTop} />
+        <StatementPurpose/>
+        <MemberGroup/>
       </section>
     );
   }

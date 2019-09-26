@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-    Container, Row, Col, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText
+    Container, Row, Col, Card, Button, CardHeader, CardFooter, CardBody
 } from "reactstrap";
 import { serviceData } from './ServiceData';
 const workTogether = require('../../img/handshake.png')

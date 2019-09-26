@@ -20,10 +20,8 @@ export default class MemberItem extends Component {
         }
 
         let member = this.props.location.state.member
-        console.log(memberData)
         return (
-            <Container>
-                <Row className="content-row individual-view">
+                <div className="member-row individual-view">
                     <Col>  
                     <Card className="member-title-card">
                         <div className="cardimage-container">
@@ -48,9 +46,8 @@ export default class MemberItem extends Component {
                     <p>{FaPhone}{member.phone}</p>
                     </Col>
 
-                </Row>
+                </div>
 
-            </Container>
         )
     }
 }
