@@ -48,7 +48,7 @@ class Navigation extends Component {
                 {/* <NavItem>
                   <Link to="/services">What We Do</Link>
                 </NavItem> */}
-              <NavbarBrand className={home === otherUrl ? "div__brand" : "div__brand d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
+              <NavbarBrand className={home === otherUrl ? "div__brand" : "div__brand d-none"} href="/electric-comp"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
                 {/* <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
