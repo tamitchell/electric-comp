@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "37611a376f89916f51c3",
-    "url": "/electric-comp/static/css/main.03091979.chunk.css"
+    "revision": "b8674b8183fed2e65f91",
+    "url": "/electric-comp/static/css/main.4d60f197.chunk.css"
   },
   {
-    "revision": "37611a376f89916f51c3",
-    "url": "/electric-comp/static/js/main.37611a37.chunk.js"
+    "revision": "b8674b8183fed2e65f91",
+    "url": "/electric-comp/static/js/main.b8674b81.chunk.js"
   },
   {
     "revision": "023ea6c16cb2882bef83",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/electric-comp/static/media/handshake.a6838e82.png"
   },
   {
-    "revision": "5c8b6dedde3111e609e894a92fd22c1b",
+    "revision": "7940fba31e0134e30fede33a73c6240b",
     "url": "/electric-comp/index.html"
   }
 ];
