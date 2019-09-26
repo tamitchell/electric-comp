@@ -1,12 +1,12 @@
 import React from "react";
-import { Container, Row, Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
+import { Container, Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { FaAngleDoubleUp } from 'react-icons/fa';
 // import { Transform, Fade } from 'react-animation-components'
 import { items } from "./MembersData";
 
 
-const MemberGroup = (props) => {
+const MemberGroup = () => {
 
     return (
         <Container className="team-container">

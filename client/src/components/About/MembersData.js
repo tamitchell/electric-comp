@@ -15,8 +15,8 @@ export const items = [
     Neyer continued to help the family business as an electrician/engineer developing electrical and
     security designs, proposals, invoices, and most importantly interfacing with customers to ensure
     their satisfaction.`,
-    email: `sample_email@desielectric.com`,
-    phone: `123456789`,
+    email: `ntorrico@desielectric.com`,
+    phone: `571-318-0076`,
     linkedIn: `Jeff's Bezos LinkedIn`
   },
   {
@@ -28,7 +28,7 @@ export const items = [
     electrical installations. Roger started his career as an Apprentice with DESI working under Nick
     Dodd (former owner), he quickly became a Journeyman and assisted Nick in the day-to-day
     operations of DESI. He is now the lead electrician and is well versed in all aspects of the trade.`,
-    email: `sample_email@desielectric.com`,
+    email: `rherbas@desielectric.com`,
     phone: `123456789`,
     linkedIn: `Jeff's Bezos LinkedIn`
   },
@@ -43,7 +43,7 @@ export const items = [
     each different union company for six months at a time, learning different phases of electrical work.`,
     detailsCont: `After the fourth year, Nick took an exam to become a Journeyman Electrician and in 1982 he
     started his own company called Dodd Electric Services. After 14 years Nick changed the name to Diversified Electric Services, Inc. and in 2018 transferred ownership to Neyer. Nick holds a Master Electrician license for Washington, D.C., Maryland, and Virginia.`,
-    email: `sample_email@desielectric.com`,
+    email: `ndodd@desielectric.com`,
     phone: `123456789`,
     linkedIn: `Jeff's Bezos LinkedIn`
   }

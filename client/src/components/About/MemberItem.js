@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
+import { Col, Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
 import { FaArrowLeft, FaEnvelope, FaPhone} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
