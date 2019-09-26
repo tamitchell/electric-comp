@@ -42,19 +42,19 @@ class Navigation extends Component {
               <NavbarToggler onClick={this.toggle} className="mr-2 navbar-dark" />
               <Collapse isOpen={this.state.isOpen} navbar>
               <Nav navbar>
-                <NavItem>
+                {/* <NavItem>
                   <Link to="/about">Who We Are</Link>
-                </NavItem>
-                <NavItem>
+                </NavItem> */}
+                {/* <NavItem>
                   <Link to="/services">What We Do</Link>
-                </NavItem>
+                </NavItem> */}
               <NavbarBrand className={home === otherUrl ? "div__brand" : "div__brand d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
-                <NavItem>
+                {/* <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
                 <NavItem className={home === otherUrl ? "" : "nav__contact"}>
                   <Link to="/contact">Contact Us</Link>
-                </NavItem>
+                </NavItem> */}
               </Nav>
               </Collapse>
             </Navbar>

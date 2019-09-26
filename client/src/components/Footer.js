@@ -12,10 +12,10 @@ const Footer = () => {
           <p>Diversified Electric Services, Inc</p>
         </div>
         <div className="footer__links">
-        <Link to="/about">Who We Are</Link> |
-        <Link to="/services">What We Do</Link> |
+        <Link to="/about">Who We Are</Link> 
+        {/* <Link to="/services">What We Do</Link> |
         <Link to="/experience">Our Experience</Link> |
-        <Link to="/contact">Contact Us</Link>
+        <Link to="/contact">Contact Us</Link> */}
         </div>
         <div className="footer__contact">
           <p>
