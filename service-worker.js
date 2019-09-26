@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/electric-comp/precache-manifest.3067a21dd501c7d6d3e97d27be2e6b5b.js"
+  "/electric-comp/precache-manifest.5b8b0e5c085b92e7c60dde02c445d242.js"
 );
 
 workbox.clientsClaim();
