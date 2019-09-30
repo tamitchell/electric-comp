@@ -8,7 +8,7 @@ export default function MainServices() {
         <Container className="main-services-container">
             <Row>
                 <Card className="title-card" body>
-                    <CardTitle><h1>DC's Finest Electricians</h1></CardTitle>
+                    <CardTitle><h1>DMV's Finest Electricians</h1></CardTitle>
                     <CardText>
                         <p>As a commercially focused enterprise, DESi Electric specializes in the following three areas:</p>
                         <ul>

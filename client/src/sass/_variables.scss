@@ -7,7 +7,9 @@ $paleblue: #E5E1ED;
 $charcoal: #161519;
 $nightblack: #0B0B0B;
 
-$body-fontsize: 1em;
+$body-fontsize: calc(0.55em + 1vmin);
+$subheading: calc(0.75em + 1vmax);
+
 $font-stack: "Roboto", Arial, Helvetica, sans-serif;
 
 $path--image: "../img/";

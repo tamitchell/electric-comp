@@ -38,6 +38,7 @@ nav {
         margin: 0 25px;
         align-self: center;
         text-align: center;
+        min-width: 10vw;
         :hover, :active {
             letter-spacing: 2px;
             color: $icewhite;
@@ -134,10 +135,6 @@ nav {
     .navbar-nav, .navbar {
         width: 100%;
         margin: 0 auto;
-    }
-    .nav-item {
-        float: right !important;
-        width: 100%;
     }
 }
 

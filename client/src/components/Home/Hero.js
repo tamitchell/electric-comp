@@ -20,7 +20,7 @@ const Hero = (props) => {
             </p>
             <hr className="title-divider"></hr>
             <p className="subtitle">
-             DC's Finest Electricians
+             DMV's Finest Electricians
             </p>
           </div>
           </Fade>

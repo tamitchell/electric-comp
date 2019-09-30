@@ -38,8 +38,8 @@ export default class MemberItem extends Component {
                     <div className="inner_col"> 
                     <p>{member.detailsCont}</p>
                     <h6>Contact {member.memberName}</h6>
-                    <p>{FaEnvelope}{member.email}</p>
-                    <p>{FaPhone}{member.phone}</p>
+                    <p><FaEnvelope/>{member.email}</p>
+                    <p><FaPhone/>{member.phone}</p>
                     </div>
 
                 </div>

@@ -16,7 +16,7 @@ const MemberGroup = () => {
             <div className="member-row">
                 {items.map((member, i) => {
                     return (
-                        <Link key={i}
+                        <Link className="inner_col" key={i}
                             to={{
                                 pathname: "/members/" + member.memberName,
                                 state: { member }
@@ -33,14 +33,14 @@ const MemberGroup = () => {
                             </Card>
                         </Link>
                     )
-                })};
+                })}
           </div>
             <div className="pretend-footer">
                 <h4>Back to the Top</h4>
                 <Button><FaAngleDoubleUp /></Button>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default MemberGroup

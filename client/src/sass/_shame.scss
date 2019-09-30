@@ -5,11 +5,9 @@
 
 .card {
     @extend .border-color-reset;
-    width: 100%;
-
     .card-body {
         .card-title {
-          @include header(1.5em);
+          @include header($subheading);
           font-style: normal;
           font-weight: bolder;
           padding-bottom: 0;
