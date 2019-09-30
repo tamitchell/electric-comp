@@ -5,7 +5,7 @@ nav {
     position: fixed;
     background-color: $darkblue;
     width: 100%;
-    padding: 1em;
+    padding: 0 !important;
     height: 80px;
     z-index: 1;
     @include font-component($size: 10px, $transform: uppercase);
@@ -17,13 +17,22 @@ nav {
         color: $icewhite;
         border-color: $icewhite;
     }
-    .navbar {
-        padding: 0;
+    .navbar-nav {
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            overflow-x: scroll;     
+        }
     }
     .navbar-expand-md .navbar-collapse {
         background-color: $darkblue;
         justify-content: flex-end;
     }
+    img {
+        margin: 1em !important;
+        width: 56px;
+        }
     .nav-item {
         letter-spacing: 2px;
         margin: 0 25px;
@@ -57,6 +66,29 @@ nav {
         bottom: auto;
         top: 0;
         width: 70%;
+        }
+    }
+    .align-right {
+        @include flex($direction: row);
+        @media screen and (max-width: 425px) {
+            padding: 3em;
+            @include flex($direction: column, $horizontal-pos: center);
+            .nav-item {
+                padding: 1em;
+            }
+        }
+    }
+    .nav-default {
+        @include flex($direction: row);
+    }
+    .centered-nav {
+        @include flex($direction: row);
+        @media screen and (max-width: 425px) {
+            padding: 3em;
+            @include flex($direction: column, $horizontal-pos: center);
+            .nav-item {
+                padding: 1em;
+            }
         }
     }
 }
@@ -95,10 +127,6 @@ nav {
   }
 
 
-.nav-norm {
-
-}
-
 .nav-alt {
     background-color: transparent;
     @include flex;
@@ -108,6 +136,12 @@ nav {
         margin: 0 auto;
     }
     .nav-item {
+        float: right !important;
         width: 100%;
     }
+}
+
+.div-brand-alt {
+    padding: 0 !important;
+    align-items: center;
 }

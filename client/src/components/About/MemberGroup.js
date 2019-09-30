@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
+import {Button, Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { FaAngleDoubleUp } from 'react-icons/fa';
 // import { Transform, Fade } from 'react-animation-components'
@@ -9,7 +9,7 @@ import { items } from "./MembersData";
 const MemberGroup = () => {
 
     return (
-        <Container className="team-container">
+        <div className="team-container">
             <div className="header">
                 <h2>Meet Our Leadership</h2>
             </div>
@@ -39,7 +39,7 @@ const MemberGroup = () => {
                 <h4>Back to the Top</h4>
                 <Button><FaAngleDoubleUp /></Button>
             </div>
-        </Container>
+        </div>
     );
 };
 

@@ -9,13 +9,11 @@
 }
 
 .hero__container {
-  height: 100%;
+  height: 100vh;
   @include bg-img-full($hero-image, $size: cover);
-  // border: 1px solid red;
-  .row {
-    @include flex();
-    position: relative;
-    height: 100vh;
+  @include flex();
+  .container__inner {
+    margin-top: 8%;
   }
   .hero__prop-img {
     @extend .centered-block;
@@ -53,19 +51,22 @@
     width: 80vw;
     max-width: 1200px;
     @include flex();
-    padding: 5% 5%;
+    padding: 3% 5%;
     .header {
       padding: 5%;
       position: relative;
       border: 4px solid $darkblue;
       text-align: left;
       margin-top: 20%;
+      @media screen and (max-width: 600px) {
+       margin-top: 50%;
+    }
       h2 {
         @include header(3rem);
         margin-left: 35%;
         margin-top: -2%;
         text-align: left;
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 768px) {
             font-size: 30px;
             text-align: center;
             margin: 0 auto;
@@ -86,7 +87,7 @@
   }
  
   .team-container {
-
+    @include flex();
     a:hover {
       text-decoration: none;
       color: $darkblue;
@@ -98,7 +99,13 @@
 
   .member-row {
     padding: 10% 0;
-    @include flex($direction: row, $wrap: wrap !important);
+    padding-top: 15%;
+    margin: 0 auto;
+    @include flex($direction: row, $wrap: wrap);
+    @media screen and (max-width: 768px) {
+      @include flex($direction: column, $horizontal-pos: center);
+
+  }
   }
 
 
@@ -119,10 +126,17 @@
     color: $darkblue;
     font-weight: lighter;
     letter-spacing: 0.02rem;
-    .col {
+    .inner_col {
+      padding: 1em;
+      margin: 0 auto;
       width: 25vw;
       max-width: 300px;
       min-width: 300px !important;
+    }
+    .inner_col:nth-of-type(1){
+      @media screen and (max-width: 600px) {
+        margin-top: 20%;
+     }
     }
     .card-body {
       padding: 1.25rem 0;

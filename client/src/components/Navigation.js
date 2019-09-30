@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem
 } from "reactstrap";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
 const brandLogo = require('../img/diversified_electric_logo.png')
@@ -27,34 +27,46 @@ class Navigation extends Component {
         });
       }
 
-      componentWillReceiveProps() {
+     UNSAFE_componentWillReceiveProps() {
         if(this.state.isOpen){this.toggle()}
       }
       render(){
         let home = '/' 
         let otherUrl = this.props.location.pathname
-        
+        console.log(otherUrl);
 
           return (
-            <nav className={home === otherUrl ? "nav-alt" : "nav-default"}>
+            <nav className={home === otherUrl ? "nav-alt" : ""}>
             <Navbar color="faded" expand="md">
-            <NavbarBrand className={home === otherUrl ? "div__brand d-none" : "div__brand d-none d-sm-block" } href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/> Diversified Electric Services, Inc</NavbarBrand>
               <NavbarToggler onClick={this.toggle} className="mr-2 navbar-dark" />
+
+
               <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav navbar>
-                {/* <NavItem>
+              <Nav navbar className={home === otherUrl ? "nav-default" : ""}>
+
+              {/* ONLY APPEARS ON HOMEPAGE */}
+              <div className={home === otherUrl ? "d-none" : "align-left"}>
+              <NavbarBrand className={home === otherUrl ? "" : "d-none d-md-flex div-brand-alt"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/>Diversified Electric Services</NavbarBrand>
+                </div>
+
+                {/* CENTERS ON HOMEPAGE, RIGHT ALIGNS ON OTHERS */}
+                <div className={home === otherUrl ? "centered-nav" : "align-right"}>
+                <NavItem>
                   <Link to="/about">Who We Are</Link>
-                </NavItem> */}
-                {/* <NavItem>
+                </NavItem>
+                <NavItem>
                   <Link to="/services">What We Do</Link>
-                </NavItem> */}
-              <NavbarBrand className={home === otherUrl ? "div__brand" : "div__brand d-none"} href="/electric-comp"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
-                {/* <NavItem>
+                </NavItem> 
+              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
+                 <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
                 <NavItem className={home === otherUrl ? "" : "nav__contact"}>
                   <Link to="/contact">Contact Us</Link>
-                </NavItem> */}
+                </NavItem>
+                </div>
+
+
               </Nav>
               </Collapse>
             </Navbar>

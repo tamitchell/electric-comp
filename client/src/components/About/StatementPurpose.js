@@ -7,7 +7,7 @@ const StatementPurpose = () => {
     return (
       <div className="statement-container">
           <div className="header">
-              <img className="lamp d-none d-sm-block" src={lamp} alt="hanging lamp" /> <h2>We Are <br/> Diversified Electric</h2>          
+              <img className="lamp d-none d-lg-block" src={lamp} alt="hanging lamp" /> <h2>We Are <br/> Diversified Electric</h2>          
           </div>
           <div className="body">
                 <p>

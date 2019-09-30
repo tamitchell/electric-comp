@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="footer">       
       <div className="footer__inner footer__navigation">
         <div className="footer__brand div__brand">
-          <img src={brandLogo} alt="Diversified Electric Services"/>
+        <Link to="/"><img src={brandLogo} alt="Diversified Electric Services"/></Link>
           <p>Diversified Electric Services, Inc</p>
         </div>
         <div className="footer__links">
