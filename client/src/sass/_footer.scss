@@ -9,6 +9,11 @@
       background-color: $charcoal;
       text-align: center;
     }
+    
+   .footer__brand__img {
+     width: 15%;
+     margin: 1em;
+   }
 
     .footer__navigation {
       @include flex();

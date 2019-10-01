@@ -8,14 +8,14 @@ const Footer = () => {
     <div className="footer">       
       <div className="footer__inner footer__navigation">
         <div className="footer__brand div__brand">
-        <Link to="/"><img src={brandLogo} alt="Diversified Electric Services"/></Link>
+        <Link to="/"><img className="footer__brand__img" src={brandLogo} alt="Diversified Electric Services"/></Link>
           <p>Diversified Electric Services, Inc</p>
         </div>
         <div className="footer__links">
-        <Link to="/about">Who We Are</Link> 
-        {/* <Link to="/services">What We Do</Link> |
-        <Link to="/experience">Our Experience</Link> |
-        <Link to="/contact">Contact Us</Link> */}
+        <Link to="/about">Who We Are</Link> |
+        <Link to="/services">What We Do</Link> 
+        {/* <Link to="/experience">Our Experience</Link> | */}
+        {/* <Link to="/contact">Contact Us</Link> */}
         </div>
         <div className="footer__contact">
           <p>

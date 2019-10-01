@@ -4,10 +4,10 @@ import AdditionalServices from './AdditionalServices';
 
 const Services = () => {
   return (
-    <section className="services-container">
+    <div className="services-container">
       <MainServices />
       <AdditionalServices />
-    </section>
+    </div>
   );
 };
 

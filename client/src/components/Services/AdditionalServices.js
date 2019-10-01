@@ -1,39 +1,39 @@
 import React from 'react'
 import {
-    Container, Row, Col, Card, Button, CardHeader, CardFooter, CardBody
+  Card, CardHeader, CardFooter, CardBody
 } from "reactstrap";
 import { serviceData } from './ServiceData';
 const workTogether = require('../../img/handshake.png')
 export default function AdditionalServices() {
     return (
-        <Container className="add-services-container">
-            <Row className="service-card">
+        <div className="add-services-container">
+            <div className="service-card">
                 <Card>
                     <CardHeader>
                         <h1>A Comprehensive View of Our Services</h1>
-                        <subtitle>Commercial Business Only</subtitle>
+                        <p className="subtitle">Commercial Business Only</p>
                     </CardHeader>
                     <CardBody>
-                       <Row>
+                       <div className="inner__row">
                            {serviceData.map((category, i) => {
                                return(
-                                <Col key={i}>
+                                <div className="inner__col" key={i}>
                                 <h5>{category.categoryTitle}</h5>
                                 <hr/>
                                 <ul>
                                     {category.services.map((name, i) => {return<li key={i}>{name}</li>})}
                                 </ul>
-                               </Col>
+                               </div>
                                )
                            })}
-                       </Row>
+                       </div>
                        </CardBody>
-                    <CardFooter><Button>Contact Us</Button></CardFooter>
+                    <CardFooter><button className="btn__contact">Contact Us</button></CardFooter>
                 </Card>
-            </Row>
-                <Row>
+            </div>
+                <div className="inner__row d-none d-lg-block">
                 <img src={workTogether} alt="Two men shaking hangs"/>
-                </Row>
-        </Container>
+                </div>
+        </div>
     )
 }

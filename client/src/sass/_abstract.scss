@@ -19,7 +19,7 @@ h2 {
 
 .title-divider {
     border: 0.75px solid $smokeyblack;
-}
+} 
 
 .border-color-reset {
     background: none !important;
@@ -37,8 +37,38 @@ h2 {
     margin: 0 auto !important;
     padding: 25px;
     @include font-component($alignment: center, $transform: uppercase);
-    img {
-        margin: 1em !important;
-        width: 56px;
-        }
 }
+
+.btn__contact {
+    padding: 0 1em;
+    border: 1px solid $icewhite;
+    overflow: hidden;
+    position: relative;
+    color: $icewhite;
+    
+    a {
+      z-index: 20;
+    }
+    
+    &:after {
+      background: #fff;
+      content: "";
+      height: 155px;
+      left: -75px;
+      opacity: .2;
+      position: absolute;
+      top: -50px;
+      transform: rotate(35deg);
+      transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+      width: 50px;
+      z-index: -10;
+    }
+  }
+  
+  .btn__contact:hover {
+    
+    &:after {
+      left: 120%;
+      transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }

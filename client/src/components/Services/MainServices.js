@@ -1,13 +1,14 @@
 import React from 'react'
-import { Container, Row, Button, Card, CardTitle, CardText } from "reactstrap";
+import { Button, Card, CardTitle, CardText } from "reactstrap";
 import { FaAngleDoubleDown } from 'react-icons/fa';
 const titleImg = require('../../img/what-we-do.png')
 
 export default function MainServices() {
     return (
-        <Container className="main-services-container">
-            <Row>
-                <Card className="title-card" body>
+        <div className="main-services-container">
+            <div className="inner__row">
+                <img src={titleImg} className="services-img d-none d-lg-block" alt="What we do" />
+                <Card className="row__card" body>
                     <CardTitle><h1>DMV's Finest Electricians</h1></CardTitle>
                     <CardText>
                         <p>As a commercially focused enterprise, DESi Electric specializes in the following three areas:</p>
@@ -19,12 +20,11 @@ export default function MainServices() {
                         <p>For a complete and comprehensive list of our abilities, see below             </p>
                     </CardText>
                 </Card>
-                <img src={titleImg} alt="What we do" />
-            </Row>
-            <Row className="pretend-footer">
+            </div>
+            <div className="pretend-footer">
                 <h4>Our Services</h4>
                 <Button><FaAngleDoubleDown /></Button>
-            </Row>
-        </Container>
+            </div>
+        </div>
     )
 }
