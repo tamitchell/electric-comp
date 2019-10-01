@@ -1,0 +1,101 @@
+@import "./container";
+@import "./navbar";
+@import "./variables";
+@import "./radio";
+@import "./footer";
+@import "./form.scss";
+
+body {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  display: block;
+  position: relative;
+  padding-bottom: 300px;
+  h1 {
+    font-size: 8vmax;
+    font-weight: 800;
+  }
+
+  h4,
+  h5 {
+    text-align: center;
+    color: white;
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  h5 {
+    padding-bottom: 1em;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  h6 {
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: 7vh;
+    font-weight: bolder;
+  }
+  p {
+    font-weight: 100;
+  }
+  img {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  input.form-control {
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid white;
+    margin-bottom: 1em;
+    padding: 2em;
+    color: white;
+    width: 80%;
+    &:focus {
+      @extend input.form-control;
+    }
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  textarea.form-control {
+    @extend input.form-control;
+    height: !important 100%;
+    min-height: 300px;
+    &:focus {
+      @extend textarea.form-control;
+    }
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  a {
+    color: white;
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  header {
+    color: white;
+    span {
+      width: 100%;
+    }
+  }
+  .btn {
+    @include btn;
+  }
+  .carousel {
+    width: 100%;
+    margin: 0;
+    position: relative;
+  }
+}

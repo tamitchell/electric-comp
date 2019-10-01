@@ -1,0 +1,27 @@
+@mixin flex {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    
+}
+
+@mixin backgroundimg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin btn($border-color: white, $bkgrd-clr: transparent, $hover-color: white, $txtclr: black) {
+    border-radius: 0;
+    padding: 15px;
+    width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid $border-color;
+    background-color: $bkgrd-clr;
+    &:hover {
+      background-color: white;
+      color: $txtclr;
+    }
+  }
+  
