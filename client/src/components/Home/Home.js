@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import Hero from "./Hero.js";
-import About from "./About";
-import Services from "./Services";
-import MeetTheTeam from "./MeetTheTeam";
-import { StyledContainer } from "../EmailForm/StyledContainer";
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+  }
+  
+  toggleTable = () => {
+    this.state.isOpen = !this.state.isOpen;
+  }
+
   render() {
     return (
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <MeetTheTeam />
-        <StyledContainer />
+        <Hero toggleTable={this.toggleTable} isOpen={this.state.isOpen} />
       </main>
     );
   }

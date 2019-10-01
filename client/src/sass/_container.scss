@@ -1,154 +1,273 @@
 @import "./variables";
 @import "./mixins";
+@import "./abstract";
 
-.container-fluid {
+
+.app-container {
   position: relative;
-  height: 100%;
-  padding: 0;
-  .row {
-    height: 100%;
-    padding: 15px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-content: center;
-    .col {
-      height: 100%;
-    }
-  }
+  background-color: rgba($color: $darkblue, $alpha: 0.03)
 }
 
-.hero-container {
-  background-color: $mainred;
-  padding: 4em;
-  height: 90vh;
-  background-image: url("../img/hero-img.jpg");
-  @include backgroundimg;
+.hero__container {
+  height: 100vh;
+  @include bg-img-full($hero-image, $size: cover);
+  @include flex();
+  .container__inner {
+    margin-top: 8%;
+  }
+  .hero__prop-img {
+    @extend .centered-block;
+    background: none;
+    border: none;
+    width: 80vw;
+    max-width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .title-card {
+    @extend .centered-block;
+    @extend .top-title-text;
+    border: 3px solid black;
+    background-color: $icewhite;
+    width: 90vw;
+    max-width: 500px;
+    strong {
+        font-weight: 900;
+      }
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+
 }
 
 .about-container {
-  padding: 4em;
-  min-height: auto !important;
-  .col:first-child {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    min-height: 600px;
+  @include flex();
+  align-items: center;
   }
-  .col:nth-child(2) {
-    position: absolute;
-    top: 0px;
-    right: 60px;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    overflow: hidden;
-  }
-  .btn {
-    @include btn(black, black);
-  }
-}
 
-.services-container {
-  text-align: center;
-  text-transform: uppercase;
-  background-color: $yellow;
-  height: auto;
-  padding: 4em;
-  h3 {
-    color: black;
-  }
-  .row-inner {
-    display: flex;
-    flex-flow: row wrap;
-    ul {
-      list-style-type: none;
-      width: 100%;
-      height: 100%;
-      display: inline-flex;
-      justify-content: center;
-      flex-flow: row wrap;
-      padding-inline-start: 0px;
-      padding: 0 1em;
-      li {
-        max-width: 200px;
-        width: 40%;
-        height: 200px;
-        max-height: 200px;
-        margin: 0.5em 1em; 
-        text-align: center;
+  .statement-container {
+    width: 80vw;
+    @include flex();
+    padding: 3% 5%;
+    .header {
+      padding: 5%;
+      position: relative;
+      border: 4px solid $darkblue;
+      text-align: left;
+      margin-top: 20%;
+      @media screen and (max-width: 600px) {
+       margin-top: 50%;
+    }
+      h2 {
+        @include header(3rem);
+        margin-left: 35%;
+        margin-top: -2%;
+        text-align: left;
+        @media screen and (max-width: 768px) {
+            font-size: 30px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+      }
+      img  {
+        position: absolute;
+        width: 30vw;
+        right: 65%;
+        top: -90%;
       }
     }
-    img {
-      margin-top: 2em;
-      width: 80px;
-      min-width: 80px;
-    }
-    p {
-      min-width: 100%;
-      padding-top: 15px;
-      text-transform: capitalize;
-    }
+    .body {
+      margin-top: 8%;
+      padding: 1rem;
+    }   
   }
-  .btn {
-    display: inline-block;
+ 
+  .team-container {
+    @include flex();
+    a:hover {
+      text-decoration: none;
+      color: $darkblue;
+    }
+
+
+  }
+
+
+  .member-row {
+    padding: 10% 0;
+    padding-top: 10%;
     margin: 0 auto;
-    @include btn(black, black);
-  }
-}
+    width: 80vw;
+    @include flex($direction: row, $wrap: wrap);
+    @media screen and (max-width: 768px) {
+      @include flex($direction: column, $horizontal-pos: center);
 
-.meet-the-team-container {
-  background-color: black;
-  position: relative;
-  width: 100%;
-  padding: 0;
-  .inner-col {
-    color: white;
-    padding: 0;
-    text-align: center;
-    float: left;
-    height: 100vh;
-    position: relative;
-    width: 100%;
-    h2 {
-      margin-top: 3em;
-    }
-    h6 {
-      text-align: center;
-      padding: 1em;
+  }
+  }
+
+
+
+  .member-title-card  {
+    padding: 1em;
+    .cardimage-container {
       width: 100%;
+      height: calc(250px + 9vmin);
+      @include flex();
+      overflow: hidden;
     }
-    h6:nth-of-type(1) {
-      margin-top: 2em;
+        @media screen and (max-width: 425px) {
+      }
+  
+  }
+
+  .individual-view {
+    color: $darkblue;
+    letter-spacing: 0.02rem;
+    width: 80vw;
+    .card-body {
+      padding: 1.25rem 0;
+      h5, h6 {text-align: left !important;}
     }
-    img {
-      display: block;
-      margin: 0 auto;
+
+    h6 {
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+
+    button {
+      @extend .border-color-reset;
+      color: $darkblue;
+      margin-top: 10%;
+      padding: 0.375rem 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .inner_col {
+    padding: 1em;
+    width: calc(250px + 9vmax);
+    @include flex($horizontal-pos: none);
+    @media screen and (max-width: 768px) {
+     align-self: center;
+  }
+  
+  }
+  .inner_col:nth-of-type(1){
+    @media screen and (max-width: 600px) {
+      margin-top: 20%;
+   }
+  }
+
+  .services-container {
+    @include flex();
+    align-items: center;
+  }
+
+  .main-services-container {
+    padding-top: 10%;
+    width: 90vw;
+    .inner__row {
+      @include flex();
+      position: relative;
+    }
+    .row__card {
+      padding: 8em 2em;
+      background: $darkblue !important;
+      color: $icewhite;
+      width: 35vw;
+      min-width: 300px;
+      @media screen and (max-width: 768px) {
+        margin-top: 20%;
+        width: 90vw;
+     }
+      h1 {
+        @include header(2em, $icewhite);
+        text-align: left;
+        font-weight: bolder;
+      }
+      @media screen and (max-width: 768px) {
+        margin-top: 20%;
+        width: 90vw;
+     }
+    }
+
+    .services-img {
+      position: absolute;
+      z-index: -1;
+      height: 80%;
       width: auto;
-      height: 500px !important;
-      max-height: 500px;
+      top: 10%;
+      left: 35%;
+    }
+  }
+
+  .add-services-container {
+    @include flex($direction: row, $wrap: nowrap);
+    width: 90vw;
+    padding-bottom: 15vh;
+    .service-card {
+      width: 100%;
+      background-color: $darkblue;
+            
+     .inner__row {
+        margin-top: 5%;
+        align-items: flex-start;
+        @include flex($direction: row, $wrap: wrap);
+        @media screen and (max-width: 768px) {
+          @include flex();
+          border: 1px solid pink;
+       }
+      }
+      h1 {
+        @include font-component($color: $icewhite, $size: $heading, $alignment: left, $transform: uppercase);
+        font-weight: bolder;
+      }
+      .subtitle {
+        font-style: italic;
+      }
+      ul,li {
+        list-style-type: none;
+        list-style: none;
+        padding-left: 0;      
+      }
+      .inner__col {
+        width: 33%;
+        min-width: 300px;
+        padding: 0 2em 4em 1em;
+      }
 
     }
-  }
-  .inner-col:nth-of-type(1) {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-  }
-  .inner-col:nth-of-type(2) {
-    background-color: white;
-    height: 100vh;
-    padding: 2em;
-    color: black;
-    text-align: left;
-    p {
-      position: absolute;
-      top: 50%;
-      width: 70%;
-      transform: translateY(-50%);
+    .inner__row:nth-child(2) {
+      width: 30%;
+      img {
+        height: 100%;
+      }
     }
   }
+
+.open-table-top {
+  transition: transform 500ms ease 0ms;
+  transform: translateY(-200px);
+  will-change: transform;
 }
 
+.open-table-bottom {
+  transition: transform 500ms ease 0ms;
+    transform: translateY(200px);
+    will-change: transform;
+}
 
+.close-table-top {
+  transition: transform 500ms ease 0ms;
+  transform: translateY(200px);
+  will-change: transform;
+}
+
+.close-table-bottom {
+  transition: transform 500ms ease 0ms;
+    transform: translateY(-200px);
+    will-change: transform;
+}

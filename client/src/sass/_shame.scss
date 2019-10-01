@@ -1,0 +1,37 @@
+@import "./variables";
+@import "./mixins";
+@import "./abstract";
+
+
+.card {
+    @extend .border-color-reset;
+    .card-body {
+        .card-title {
+          @include header($subheading);
+          font-style: normal;
+          font-weight: bolder;
+          padding-bottom: 0;
+        }
+        .card-subtitle {
+          @include header(1em, $yellow);
+        }
+      }
+}
+
+.add-services-container {
+    .card {
+        padding: 2em;
+        background-color: $darkblue;
+        color: $icewhite;
+        border-radius: 0;
+    }
+    hr {
+        border-top: 1px solid $icewhite;
+    }
+    button {
+        @extend .border-color-reset;
+        text-transform: uppercase;
+        border: 1px solid $icewhite;
+        border-radius: 0;
+    }
+}

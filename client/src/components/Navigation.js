@@ -7,9 +7,12 @@ import {
   Nav,
   NavItem
 } from "reactstrap";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
-export default class Navigation extends Component {
+const brandLogo = require('../img/diversified_electric_logo.png')
+
+class Navigation extends Component {
     constructor(props) {
         super(props);
     
@@ -23,23 +26,47 @@ export default class Navigation extends Component {
           isOpen: !this.state.isOpen
         });
       }
+
+     UNSAFE_componentWillReceiveProps() {
+        if(this.state.isOpen){this.toggle()}
+      }
       render(){
+        let home = '/' 
+        let otherUrl = this.props.location.pathname
+        console.log(otherUrl);
+
           return (
-            <nav>
-            <Navbar className="navigation" color="faded" expand="md">
-              <NavbarBrand href="/">Diverse Electric</NavbarBrand>
-              <NavbarToggler onClick={this.toggle} className="mr-2" />
+            <nav className={home === otherUrl ? "nav-alt" : ""}>
+            <Navbar color="faded" expand="md">
+              <NavbarToggler onClick={this.toggle} className="mr-2 navbar-dark" />
+
+
               <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
+              <Nav navbar className={home === otherUrl ? "nav-default" : ""}>
+
+              {/* ONLY APPEARS ON HOMEPAGE */}
+              <div className={home === otherUrl ? "d-none" : "align-left"}>
+              <NavbarBrand className={home === otherUrl ? "" : "d-none d-md-flex div-brand-alt"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/>Diversified Electric Services</NavbarBrand>
+                </div>
+
+                {/* CENTERS ON HOMEPAGE, RIGHT ALIGNS ON OTHERS */}
+                <div className={home === otherUrl ? "centered-nav" : "align-right"}>
                 <NavItem>
-                  <Link to="/pricing">Pricing</Link>
+                  <Link to="/about">Who We Are</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/about">About</Link>
+                  <Link to="/services">What We Do</Link>
+                </NavItem> 
+              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
+                 {/* <NavItem>
+                  <Link to="/experience">Our Experience</Link>
                 </NavItem>
-                <NavItem>
-                  <Link to="/contact">Contact</Link>
-                </NavItem>
+                <NavItem className={home === otherUrl ? "" : "btn__contact"}>
+                  <Link to="/contact">Contact Us</Link>
+                </NavItem> */}
+                </div>
+
+
               </Nav>
               </Collapse>
             </Navbar>
@@ -47,3 +74,5 @@ export default class Navigation extends Component {
   );
 };
 }
+
+export default withRouter(Navigation)

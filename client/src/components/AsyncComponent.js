@@ -7,7 +7,7 @@ export default function asyncComponent(getComponent) {
         static Component = null;
         state = { Component: AsyncComponent.Component };
 
-        componentWillMount() {
+       UNSAFE_componentWillMount() {
             if (!this.state.Component) {
                 getComponent().then(Component => {
                     AsyncComponent.Component = Component
