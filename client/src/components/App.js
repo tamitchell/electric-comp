@@ -18,18 +18,22 @@ import('./About/About').then(module => module.default)
 const Services = asyncComponent(() => 
 import('./Services/Services').then(module => module.default)
 )
+
+const Experience = asyncComponent(() =>
+import('./Experience/ExperienceContainer').then(module => module.default))
 class App extends Component {
   
   render() {
     return (
       <div className="App">
-        <div className="app-container">
           <Navigation/>
+        <div className="app-container">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/services" component={Services}/>
           <Route path="/members/:memberName" component={MemberItem}/>
+          <Route exact path="/experience" component={Experience}/>
           <Route component={NotFound} />
         </Switch>
       </div>

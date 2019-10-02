@@ -5,7 +5,9 @@
 
 .app-container {
   position: relative;
-  background-color: rgba($color: $darkblue, $alpha: 0.03)
+  background-color: rgba($color: $darkblue, $alpha: 0.03);
+  @include flex();
+  align-items: center;
 }
 
 .hero__container {
@@ -17,9 +19,7 @@
   }
   .hero__prop-img {
     @extend .centered-block;
-    background: none;
-    border: none;
-    width: 80vw;
+    @extend .container-width;
     max-width: 300px;
     position: absolute;
     left: 50%;
@@ -48,7 +48,7 @@
   }
 
   .statement-container {
-    width: 80vw;
+    @extend .container-width;
     @include flex();
     padding: 3% 5%;
     .header {
@@ -100,7 +100,7 @@
     padding: 10% 0;
     padding-top: 10%;
     margin: 0 auto;
-    width: 80vw;
+    @extend .container-width;
     @include flex($direction: row, $wrap: wrap);
     @media screen and (max-width: 768px) {
       @include flex($direction: column, $horizontal-pos: center);
@@ -126,7 +126,7 @@
   .individual-view {
     color: $darkblue;
     letter-spacing: 0.02rem;
-    width: 80vw;
+    @extend .container-width;
     .card-body {
       padding: 1.25rem 0;
       h5, h6 {text-align: left !important;}
@@ -247,6 +247,112 @@
       }
     }
   }
+
+.experience-container {
+  @extend .container-width;
+  @include flex();
+  .header-container {
+    margin-top: 20%;
+    h1 {
+      @include bg-img-full($project-image, $size: cover, $position: center);
+      @include font-component($icewhite, $title, center, uppercase);
+      font-weight: bolder;
+      padding: 1em;
+      border: 3px solid $darkblue;
+    }
+    .subtitle {
+      text-align: center;
+      margin-top: 5%;
+    }
+    .pretend-footer {
+      text-align: center;
+      a {
+        @include font-component($darkblue);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .project-container {
+    h3 {
+      @include font-component($darkblue, $heading, left, uppercase);
+      font-weight: bolder;
+      margin: 1em 0;
+    }
+    .subtitle{
+      margin: 3em 0;
+    }
+    .project-gallery {
+      border: 1px solid red;
+      @include flex($direction: row, $wrap: wrap);
+      .project-btn {
+        border: 3px solid $darkblue;
+        position: relative;
+        width: calc(200px + 5vmax);
+        height: calc(100px + 5vmax);
+        margin: 1em;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        p {
+          z-index: 9;
+          font-weight: bolder;
+          color: $icewhite;
+        }
+        .overlay {
+          background-color: $darkblue;
+          height: 100%;
+          width: 100%;
+          opacity: 0.22;
+          top: 0;
+          left: 0;
+          position: absolute;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+}
+
+.modal-content, .project-modal {
+  border: 10px solid purple;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 80vw !important;
+  .modal-header {
+    background-color: $darkblue;
+    h3 {
+      @include font-component($icewhite, calc(12px + 1vmax), left, uppercase );
+      font-weight: bolder;
+    }
+    p {
+      @include font-component($icewhite, $body-fontsize, left );
+      font-style: italic;
+      font-weight: light;
+    }
+  }
+  .modal-body {
+    @include flex($direction: row, $wrap: wrap, $horizontal-pos: space-between);
+    .carousel-container {
+      width: 50%;
+      .carousel-indicator {
+        position: relative;
+      }
+      .carousel-indicators li {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid blue;
+      }
+    }
+  }
+}
 
 .open-table-top {
   transition: transform 500ms ease 0ms;
