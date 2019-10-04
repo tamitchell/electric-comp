@@ -5,7 +5,7 @@ const receptionDown = require('../../img/receptionDown.png')
 
 const Hero = (props) => {
   return (
-      <div className="hero__container" fluid={true}>
+      <div className="hero__container">
         <div class="container__inner">
         <Transform className={props.isOpen ? "reception close-table-top" : "reception open-table-top"} enterTransform="translateY(-80px)" in>
         <button onClick={props.toggleTable} className="hero__prop-img">

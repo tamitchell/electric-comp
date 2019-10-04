@@ -29,7 +29,7 @@ class CustomizedModal extends React.Component {
         <div className="overlay">
         </div>
         </Button>
-        <Modal className="project-modal" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal className="project-modal" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>
               <h3>{this.props.modelTitle}</h3>
               <p>{this.props.modelSubtitle}</p>
