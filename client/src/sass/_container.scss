@@ -218,7 +218,6 @@
         @include flex($direction: row, $wrap: wrap);
         @media screen and (max-width: 768px) {
           @include flex();
-          border: 1px solid pink;
        }
       }
       h1 {
