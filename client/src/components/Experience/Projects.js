@@ -10,7 +10,17 @@ const Projects = () => {
             <div className="project-gallery">
                 {projects.map((project, i) => {
                     return (
-                        <CustomizedModal key={i}  buttonTitle={project.locationTitle} background={project.images[0]} modelTitle={project.locationFull} modelSubtitle={project.dateSpanded} images={project.images} />
+                        <CustomizedModal key={i}  
+                        buttonTitle={project.locationTitle} 
+                        background={project.images[0]} 
+                        modelTitle={project.locationFull} 
+                        modelSubtitle={project.dateSpanded} 
+                        images={project.images}
+                        requestedBy={project.requestedBy}
+                        location={project.locationFull}
+                        details={project.details}
+                        index={i}
+                        />
                     )
                 })}
             </div>

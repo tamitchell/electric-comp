@@ -55,15 +55,21 @@ class CarouselWThumbnail extends Component {
       );
     });
 
-    const thumbnailStyle = {
-        backgroundImage: `url(${this.props.data})`
-    }
-
-
 
     return (
         <div className="carousel-container">
-        <CarouselIndicators style={thumbnailStyle} items={this.props.data} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <ol className="carousel-indicators">
+          {this.props.data.map((item, index) => {
+            return (
+              <li
+                key={index}
+                onClick={() => this.goToIndex(index)}
+                className={index === activeIndex ? "" : "inactive-item" }
+                style={{ backgroundImage: `url(${item})`}}
+              />
+            );
+          })}
+        </ol>
         <Carousel
         activeIndex={activeIndex}
         next={this.next}

@@ -36,6 +36,7 @@ class CustomizedModal extends React.Component {
           </ModalHeader>
           <ModalBody>
             <CarouselWThumbnail data={this.props.images}/>
+            
             <div className="content">
             <h4>Requested By</h4>
             <p>{this.props.requestedBy}</p>
