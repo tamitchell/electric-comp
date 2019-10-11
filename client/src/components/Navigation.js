@@ -55,7 +55,6 @@ class Navigation extends Component {
                 <NavItem>
                   <Link to="/about">Who We Are</Link>
                 </NavItem>
-              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
                 <NavItem>
                   <Link to="/services">What We Do</Link>
                 </NavItem> 
