@@ -62,7 +62,7 @@ class Navigation extends Component {
                  <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>
-                <div className={home === otherUrl ? "" : "btn__contact"}>
+                <div className={home === otherUrl ? "btn__contact-home" : "btn__contact"}>
                   <ContactUsModal/>
                 </div>
                 </div>
