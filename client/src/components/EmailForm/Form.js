@@ -30,10 +30,9 @@ export default class FormComponent extends Component {
         className="confirmation-form-container"
         onSubmit={e => this.props.onSubmit(e)}
       >
-        <h4>Questions? Comments? Send Us a Message</h4>
-        <h5>
-          Be sure to take one last look to make sure everthing looks right.
-        </h5>
+        <h4>Send Us a Message</h4>
+        
+        <p>We take our commitment to our clients seriously. If you cannot find the answer to your questions on our site, or would to inquire about future partnerships and projects, please do not hesitate to contact us.</p>       
         <FormGroup>
           <Input
             type="text"

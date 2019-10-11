@@ -5,7 +5,7 @@ const CardStrcture = (src, name, jobPosition) => {
     return (
     <Card className="member-title-card">
         <div className="cardimage-container">
-        <CardImg top width="100%" src={src} alt="Card image cap" />
+        <CardImg top width="100%" src={src} alt="Image Not Available" />
         </div>
         <CardBody>
         <CardTitle>{name}</CardTitle>

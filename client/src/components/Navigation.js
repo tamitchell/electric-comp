@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
+import ContactUsModal from './ContactUsModal';
 
 const brandLogo = require('../img/diversified_electric_logo.png')
 
@@ -46,7 +47,7 @@ class Navigation extends Component {
 
               {/* ONLY APPEARS ON HOMEPAGE */}
               <div className={home === otherUrl ? "d-none" : "align-left"}>
-              <NavbarBrand className={home === otherUrl ? "" : "d-none d-md-flex div-brand-alt"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/>Diversified Electric Services</NavbarBrand>
+              <NavbarBrand className={home === otherUrl ? "" : "d-none d-md-flex div-brand-alt"} href="/"><img className="logo-img" src={require('../img/logo.png')} alt="Diversified Electric Services"/>   <p>Diversified Electric Services</p></NavbarBrand>
                 </div>
 
                 {/* CENTERS ON HOMEPAGE, RIGHT ALIGNS ON OTHERS */}
@@ -54,16 +55,17 @@ class Navigation extends Component {
                 <NavItem>
                   <Link to="/about">Who We Are</Link>
                 </NavItem>
-              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={brandLogo} alt="Diversified Electric Services"/></NavbarBrand>
                 <NavItem>
                   <Link to="/services">What We Do</Link>
                 </NavItem> 
-                 {/* <NavItem>
+              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={require('../img/logo.png')} alt="Diversified Electric Services"/></NavbarBrand>
+                 <NavItem>
                   <Link to="/experience">Our Experience</Link>
-                </NavItem> */}
-                {/* <NavItem className={home === otherUrl ? "" : "btn__contact"}>
-                  <Link to="/contact">Contact Us</Link>
-                </NavItem> */}
+                </NavItem>
+                <NavItem className={home === otherUrl ? "" : "btn__contact"}>
+                  {/* <Link to="/contact">Contact Us</Link> */}
+                  <ContactUsModal/>
+                </NavItem>
                 </div>
 
 

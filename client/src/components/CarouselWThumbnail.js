@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
   Carousel,
-  CarouselItem,
-  CarouselIndicators
+  CarouselItem
 } from 'reactstrap';
 
 class CarouselWThumbnail extends Component {

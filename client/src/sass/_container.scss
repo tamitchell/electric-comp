@@ -8,14 +8,12 @@
   background-color: rgba($color: $darkblue, $alpha: 0.03);
   @include flex();
   align-items: center;
-  border: 1px solid yellow;
 }
 
 .hero__container {
   height: 100vh;
   @include bg-img-full($hero-image, $size: cover);
   @include flex();
-  border: 1px solid red;
   .container__inner {
     margin-top: 8%;
   }
@@ -82,6 +80,12 @@
         width: 30vw;
         right: 65%;
         top: -90%;
+        @media screen and (min-width: 2560px) {
+          top: -130%;
+      }
+      @media screen and (width: 1024px) {
+        top: -50%;
+    }
       }
     }
     .body {
@@ -288,7 +292,6 @@
     }
     .project-gallery {
       @include flex($direction: row, $wrap: wrap);
-      border: 1px solid red;
       .project-btn {
         border: 3px solid $darkblue;
         position: relative;
@@ -298,21 +301,36 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        p {
-          z-index: 9;
-          font-weight: bolder;
-          color: $icewhite;
-        }
+        background-color: transparent;
+
         .overlay {
-          background-color: $darkblue;
+          background-color: rgba($darkblue, 0.22);
           height: 100%;
           width: 100%;
-          opacity: 0.22;
           top: 0;
           left: 0;
           position: absolute;
           padding: 0;
+          p {
+            z-index: 9999;
+            font-weight: bolder;
+            color: $icewhite;
+            line-height: calc(150px + 5vmax);
+          }
         }
+      }
+    }
+    .fundedWork-gallery {
+      justify-content: flex-start;
+      margin-bottom: 5vh;
+      .fundedWorkIcon {
+        width: calc(250px + 5vmax);
+        height: calc(150px + 5vmax);
+        background: none;
+        border: none;
+        background-size:100%;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }
@@ -320,7 +338,6 @@
 }
 
  .project-modal {
-  max-width: 80vw !important;
   .modal-header {
     background-color: $darkblue;
     h3 {
@@ -344,6 +361,9 @@
    .content {
     width: 50%;
     padding: 1em;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
     h4 {
       @include font-component($darkblue, $size: $subheading, $transform: uppercase);
     }
@@ -352,6 +372,10 @@
     .carousel-container {
       position: relative;
       width: 50%;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
       ol {
         position: relative;
         margin: 0;

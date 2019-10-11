@@ -21,7 +21,7 @@ export default class MemberItem extends Component {
                     <div className="inner_col">  
                     <Card className="member-title-card">
                         <div className="cardimage-container">
-                            <CardImg top width="100%" src={member.src} alt="Card image cap" />
+                            <CardImg top width="100%" src={member.src} alt="Image Not Available" />
                         </div>
                         <CardBody>
                             <CardTitle>{member.memberName}</CardTitle>

@@ -24,7 +24,7 @@ const MemberGroup = () => {
                         >
                             <Card className="member-title-card scale-up">
                                 <div className="cardimage-container">
-                                    <CardImg top width="100%" src={member.src} alt="Card image cap" />
+                                    <CardImg top width="100%" src={member.src} alt="Image Not Available" />
                                 </div>
                                 <CardBody>
                                     <CardTitle>{member.memberName}</CardTitle>

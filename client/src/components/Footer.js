@@ -21,7 +21,7 @@ const Footer = () => {
           <p>
           5236 Saint Genevieve Place <br/>
 Alexandria, VA 22315 <br/>
-<a href="tel:+15713180076"> (571) 318-0076 </a> <br/> <a href="mailto:ntorrico@desielectric.com?subject=ClientQuestion">ntorrico@desielectric.com</a> <br/>
+<a href="tel:+15713180076"> (571) 318-0076 </a> <br/> <a href="mailto:ntorrico@desielectric.com?subject=ClientQuestion">DESI@DesiElectric.com</a> <br/>
           </p>
         </div>
       </div>

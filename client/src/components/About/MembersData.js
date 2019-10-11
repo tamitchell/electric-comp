@@ -1,9 +1,9 @@
 export const items = [
   {
-    src: require("../../img/team1.jpg"),
+    src: require("../../img/ceo.jpg"),
     altText: "Neyer Torrico",
     memberName: "Neyer Torrico",
-    jobPosition: "Head of Finance",
+    jobPosition: "CEO",
     details: `As the president of DESI, Neyer is responsible for formulating and implementing the
     strategic plan that guides the direction of the company, as well as overseeing all operation
     development and ensuring customer fulfillment. Neyer’s career started while he was still in high
@@ -20,10 +20,10 @@ export const items = [
     linkedIn: `Jeff's Bezos LinkedIn`
   },
   {
-    src: require("../../img/team2.jpeg"),
+    // src: require("../../img/team2.jpeg"),
     altText: "Slide 2",
     memberName: "Roger Herbas",
-    jobPosition: "Owner/Electrician",
+    jobPosition: "Lead Electrician",
     details: `As the Lead Electrician of DESI, Roger is responsible for the day-to-day operations and
     electrical installations. Roger started his career as an Apprentice with DESI working under Nick
     Dodd (former owner), he quickly became a Journeyman and assisted Nick in the day-to-day
@@ -33,10 +33,10 @@ export const items = [
     linkedIn: `Jeff's Bezos LinkedIn`
   },
   {
-    src: require("../../img/team4.jpg"),
+    // src: require("../../img/team4.jpg"),
     altText: "Slide 4",
     memberName: "Nick Dodd",
-    jobPosition: "Lead Electrician",
+    jobPosition: "Master Electrician",
     details: `Nick started his career in 1966 working for Local Union 26 Electrical Workers. His first job
     was with Union Light and Power on a high-rise apartment building. After leaving Union Light and
     Power he enrolled in the Apprenticeship Program. In the Apprenticeship Program, he worked with
