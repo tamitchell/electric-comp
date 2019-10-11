@@ -22,7 +22,7 @@ class ContactUsModal extends React.Component {
 
     return (
       <div>
-        <Button color="danger" className="contact-btn" onClick={this.toggle}>
+        <Button className="contact-btn" onClick={this.toggle}>
         Contact Us
         </Button>
         <Modal className="project-modal" isOpen={this.state.modal} toggle={this.toggle}>

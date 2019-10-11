@@ -6,8 +6,6 @@
 .app-container {
   position: relative;
   background-color: rgba($color: $darkblue, $alpha: 0.03);
-  @include flex();
-  align-items: center;
 }
 
 .hero__container {
@@ -173,6 +171,7 @@
   .services-container {
     @include flex();
     align-items: center;
+
   }
 
   .main-services-container {
@@ -257,9 +256,11 @@
   }
 
 .experience-container {
-  @extend .container-width;
   @include flex();
+  align-items: center;
+
   .header-container {
+    @include flex();
     margin-top: 20%;
     h1 {
       @include bg-img-full($project-image, $size: cover, $position: center);
@@ -282,6 +283,8 @@
   }
 
   .project-container {
+    @include flex();
+    @extend .container-width;
     h3 {
       @include font-component($darkblue, $heading, left, uppercase);
       font-weight: bolder;
@@ -418,4 +421,19 @@
   transition: transform 500ms ease 0ms;
     transform: translateY(-200px);
     will-change: transform;
+}
+
+.contact-btn {
+  letter-spacing: 2px;
+  align-self: center;
+  text-align: center;
+  min-width: 100%;
+  height: 100%;
+
+  @extend .border-color-reset;
+  @include font-component($transform: uppercase);
+}
+
+.modal-dialog {
+  max-width: 80vw;
 }

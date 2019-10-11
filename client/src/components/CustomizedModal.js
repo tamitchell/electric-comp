@@ -35,7 +35,7 @@ class CustomizedModal extends React.Component {
 
     return (
       <div>
-        <Button color="danger" className={this.props.buttonImage !== undefined ? "fundedWorkIcon" : "project-btn"} style={this.props.buttonImage !== undefined ? companyIcon : buttonStlye} onClick={this.toggle}>
+        <Button className={this.props.buttonImage !== undefined ? "fundedWorkIcon" : "project-btn"} style={this.props.buttonImage !== undefined ? companyIcon : buttonStlye} onClick={this.toggle}>
         <div className="overlay">
         <p>{this.props.buttonTitle}</p>
         </div>
