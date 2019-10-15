@@ -1,26 +1,27 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { constants } from '../constants';
 
 export default class FormComponent extends Component {
   constructor() {
     super();
     this.state = {
       input: {
-        firstName: "",
+        fullName: "",
         lastName: "",
         subject: "",
         message: "",
         email: "",
         phoneNumber: "",
+        companyName: ""
       }
         };
   }
   render() {
     const {
-      firstName,
-      lastName,
+      fullName,
       message,
-      subject,
+      companyName,
       email,
       phoneNumber
     } = this.state;
@@ -32,26 +33,35 @@ export default class FormComponent extends Component {
       >
         <h4>Send Us a Message</h4>
         
-        <p>We take our commitment to our clients seriously. If you cannot find the answer to your questions on our site, or would to inquire about future partnerships and projects, please do not hesitate to contact us.</p>       
+        <p>We take our commitment to our clients seriously. If you cannot find the answer to your questions on our site, or would like to inquire about future partnerships and projects, please do not hesitate to contact us.</p>       
         <FormGroup>
+        <Label for="fullName">Full Name
           <Input
             type="text"
-            defaultValue={firstName}
+            defaultValue={fullName}
             onChange={this.props.handleChange}
-            name="firstName"
-            placeholder="First Name"
+            name="fullName"
+            placeholder="Full Name"
             required
           />
-          <Input
-            type="text"
-            defaultValue={lastName}
-            onChange={this.props.handleChange}
-            name="lastName"
-            placeholder="Last Name"
-            required
-          />
+        </Label>
+        <Label for="companyName">Company Name (Optional) 
+            <Input
+              type="text"
+              defaultValue={companyName}
+              onChange={this.props.handleChange}
+              name="companyName"
+              placeholder="Company Name"
+              required
+            />
+        </Label>
+
         </FormGroup>
+
+
         <FormGroup>
+        <Label for="email">Email
+        
             <Input
               type="email"
               defaultValue={email}
@@ -60,6 +70,11 @@ export default class FormComponent extends Component {
               placeholder="Email"
               required
             />
+        </Label>
+
+
+<Label for="phone">
+  Phone Number
             <Input
               type="phone"
               defaultValue={phoneNumber}
@@ -68,30 +83,33 @@ export default class FormComponent extends Component {
               placeholder="(555) 555 - 5555"
               required
             />
-        </FormGroup>
+      </Label>
+          </FormGroup>
+       
         <FormGroup>
-          <Input
-            type="text"
-            defaultValue={subject}
-            onChange={this.props.handleChange}
-            name="subject"
-            placeholder="Subject Line"
-            required
-          />
-        </FormGroup>
-        <FormGroup>
+        <Label for="message">
+          Message
           <Input
             type="textarea"
             defaultValue={message}
             onChange={this.props.handleChange}
-            placeholder="Enter text here"
+            placeholder="Ask us anything!"
             name="message"
             required
           />
-          <input type="hidden" name="*honeypot" />
-          <input type="hidden" name="*default_email" value="DiversifiedElectricInc@gmail.com" />
+          </Label>
         </FormGroup>
-        <Button type="submit">Submit</Button>
+        <FormGroup className="subject-type">
+          {/* <h5> Interested In </h5>
+          <div className="checkbox">
+            <Label for="exampleCheck" check>Partnerships
+            </Label>
+            <Input type="checkbox" name="check"className="checkbox"/>
+          </div> */}
+        <input type="hidden" name="*honeypot" />
+          <input type="hidden" name="*default_email" value={constants.COMPANY_EMAIL} />
+        </FormGroup>
+        <Button className="form-submit-btn" type="submit">Submit</Button>
       </Form>
     );
   }

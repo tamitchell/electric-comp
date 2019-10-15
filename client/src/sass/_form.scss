@@ -33,21 +33,54 @@
 }
 
 .confirmation-form-container {
+  position: relative;
   padding: 30px;
-  input[name="firstName"],
-  input[name="lastName"],
-  input[name="email"],
-  input[name="phoneNumber"] {
+  h4 {
+    @include font-component($darkblue, $size: $subheading, );
+    font-weight: bold;
+  }
+  input {
+    border: 1px solid #707070;
+    border-radius: 0px;
+    width: 95%;
+  }
+  label[for="message"] {
+    width: 100%;
+  }
+  label {
+    min-width: 50%;
     display: inline-block;
-    min-width: 39%;
-    max-width: 39%;
-    margin: 0.5em;
   }
-  input[name="subject"],
-  input[name="message"] {
-    min-width: 150px;
+}
+
+.checkbox {
+  border: 1px solid $darkblue;
+  background-color: $darkblue;
+  label{ 
+    position: relative;
+    padding:0.5em 1em;
+    @include font-component($darkblue, $body-fontsize, center, uppercase);
+    font-weight: normal;
   }
-  input[name="message"] {
-    max-height: 200px;
+  input[type="checkbox"] {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.form-submit-btn {
+  float: right;
+  width: 33%;
+  border-radius: 0px !important;
+  background-color: $darkblue !important;
+  @include font-component($icewhite, $body-fontsize, center, uppercase);
+
+}
+
+.subject-type {
+  // border: 1px solid red;
+  h5 {    
+    @include font-component($darkblue, $body-fontsize, center, uppercase);
+    font-weight: bold;
   }
 }

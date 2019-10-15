@@ -21,7 +21,8 @@ const Footer = () => {
           <p>
           5236 Saint Genevieve Place <br/>
 Alexandria, VA 22315 <br/>
-<a href={`tel:+${constants.COMPANY_PHONE}`}> {constants.COMPANY_PHONE}</a> <br/> <a href={`mailto:${constants.COMPANY_EMAIL}?subject=ClientQuestion`}>{constants.COMPANY_EMAIL}</a> <br/>
+<a href={`tel:+${constants.COMPANY_PHONE}`}> {constants.COMPANY_PHONE}</a> <br/> 
+<a href={`mailto:${constants.COMPANY_EMAIL}?subject=ClientQuestion`}>{constants.COMPANY_EMAIL}</a> <br/>
           </p>
         </div>
       </div>
