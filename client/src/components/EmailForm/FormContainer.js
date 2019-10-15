@@ -19,17 +19,15 @@ class FormContainer extends Component {
     const { input } = this.state;
     input[e.target.name] = e.target.value;
     this.setState({ input: input });
-    console.log(this.state);
   };
 
   onSubmit = e => {
     e.preventDefault();
       axios.defaults.headers.post["Content-Type"] = "application/json";
       axios
-        .post(`https://www.enformed.io/sk2rzse5/`, this.state.input)
+        .post(`https://www.enformed.io/${process.env.REACT_APP_EMAIL_TOKEN}/`, this.state.input)
         .then(response =>
          { 
-           console.log(response.status)
            response.statusText === "OK"
             ? this.setState({
                 formSubmitted: true,

@@ -424,10 +424,11 @@
 }
 
 .contact-btn {
+  margin: 1em 0;
   letter-spacing: 2px;
   align-self: center;
   text-align: center;
-  min-width: 100%;
+  max-width: 200px;
   height: 100%;
 
   @extend .border-color-reset;
@@ -435,7 +436,7 @@
 }
 
 .modal-dialog {
-  max-width: 80vw;
+  min-width: 80vw;
 }
 
 .btn__contact-home {

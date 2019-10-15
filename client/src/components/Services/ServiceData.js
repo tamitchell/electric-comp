@@ -5,10 +5,10 @@ export const serviceData = [
     },
     {
         categoryTitle: "High Voltage",
-        services: ["Fiber & CAT6 Installs", "Heavy-Ups Panel Upgrades", "Generator Installs"]
+        services: ["Electrical Distribution Panel Inspections", "Troubleshooting, Repairs, & Replacements"]
     },
     {
         categoryTitle: "Low Voltage",
-        services: ["Electrical Distribution Panel Inspections", "Troubleshooting, Repairs, & Replacements"]
+        services: ["CAT6/5 Installations", "12 VDC 24 VDC circuits"]
     }
 ]

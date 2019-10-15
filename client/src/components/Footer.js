@@ -1,27 +1,27 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { constants } from './constants'
 
-const brandLogo = require('../img/diversified_electric_logo.png')
 
 const Footer = () => {
   return (
     <div className="footer">       
       <div className="footer__inner footer__navigation">
         <div className="footer__brand div__brand">
-        <Link to="/"><img className="footer__brand__img" src={brandLogo} alt="Diversified Electric Services"/></Link>
-          <p>Diversified Electric Services, Inc</p>
+        <Link to="/"><img className="footer__brand__img" src={constants.COMPANY_SEAL} alt={constants.COMPANY_TITLE}/></Link>
+          <p>{constants.COMPANY_TITLE}</p>
         </div>
         <div className="footer__links">
         <Link to="/about">Who We Are</Link> |
-        <Link to="/services">What We Do</Link> 
-        {/* <Link to="/experience">Our Experience</Link> | */}
-        {/* <Link to="/contact">Contact Us</Link> */}
+        <Link to="/services">What We Do</Link> |
+        <Link to="/experience">Our Experience</Link> |
+        <Link to="/contact">Contact Us</Link>
         </div>
         <div className="footer__contact">
           <p>
           5236 Saint Genevieve Place <br/>
 Alexandria, VA 22315 <br/>
-<a href="tel:+15713180076"> (571) 318-0076 </a> <br/> <a href="mailto:ntorrico@desielectric.com?subject=ClientQuestion">DESI@DesiElectric.com</a> <br/>
+<a href={`tel:+${constants.COMPANY_PHONE}`}> {constants.COMPANY_PHONE}</a> <br/> <a href={`mailto:${constants.COMPANY_EMAIL}?subject=ClientQuestion`}>{constants.COMPANY_EMAIL}</a> <br/>
           </p>
         </div>
       </div>
@@ -29,10 +29,9 @@ Alexandria, VA 22315 <br/>
         <div className="footer__copyright">
         <p> 
           © 2019 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/">
+          <a href={constants.COMPANY_WEBSITE}>
             {" "}
-            Diversified Electric Services Inc.
-          </a>
+{constants.COMPANY_TITLE}</a>
           {" "}All Rights Reserved. |
        Web Design by <a  href="https://tamitchell.github.io/">Tasha Mitchell</a></p>
         </div>

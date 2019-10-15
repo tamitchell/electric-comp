@@ -1,7 +1,6 @@
 import React from "react";
 
 export function FormStatus(props) {
-  console.log(props);
   if (props.status === true) {
     return (
       <div className="form-status">
@@ -13,7 +12,7 @@ export function FormStatus(props) {
   if (props.status === false) {
     return (
       <div className="form-status">
-          <h2>Uh-oh</h2>
+          <h2>Form not senth</h2>
           <p>Seems there has been an error on the server-side. Refresh and try
           again.</p>
       </div>

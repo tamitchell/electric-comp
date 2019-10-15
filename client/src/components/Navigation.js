@@ -10,8 +10,7 @@ import {
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import ContactUsModal from './ContactUsModal';
-
-const brandLogo = require('../img/diversified_electric_logo.png')
+import {constants} from './constants'
 
 class Navigation extends Component {
     constructor(props) {
@@ -34,7 +33,6 @@ class Navigation extends Component {
       render(){
         let home = '/' 
         let otherUrl = this.props.location.pathname
-        console.log(otherUrl);
 
           return (
             <nav className={home === otherUrl ? "nav-alt" : ""}>
@@ -47,7 +45,7 @@ class Navigation extends Component {
 
               {/* ONLY APPEARS ON HOMEPAGE */}
               <div className={home === otherUrl ? "d-none" : "align-left"}>
-              <NavbarBrand className={home === otherUrl ? "" : "d-none d-md-flex div-brand-alt"} href="/"><img className="logo-img" src={require('../img/logo.png')} alt="Diversified Electric Services"/>   <p>Diversified Electric Services</p></NavbarBrand>
+              <NavbarBrand className={home === otherUrl ? "" : "d-none d-md-flex div-brand-alt"} href="/"><img className="logo-img" src={constants.COMPANY_LOGO} alt={constants.COMPANY_TITLE}/><p>{constants.COMPANY_TITLE}</p></NavbarBrand>
                 </div>
 
                 {/* CENTERS ON HOMEPAGE, RIGHT ALIGNS ON OTHERS */}
@@ -58,7 +56,7 @@ class Navigation extends Component {
                 <NavItem>
                   <Link to="/services">What We Do</Link>
                 </NavItem> 
-              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={require('../img/logo.png')} alt="Diversified Electric Services"/></NavbarBrand>
+              <NavbarBrand className={home === otherUrl ? "div__brand d-none d-md-block" : "d-none"} href="/"><img className="logo-img" src={constants.COMPANY_LOGO} alt={constants.COMPANY_TITLE}/></NavbarBrand>
                  <NavItem>
                   <Link to="/experience">Our Experience</Link>
                 </NavItem>

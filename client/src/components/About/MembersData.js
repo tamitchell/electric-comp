@@ -3,7 +3,7 @@ export const items = [
     src: require("../../img/ceo.jpg"),
     altText: "Neyer Torrico",
     memberName: "Neyer Torrico",
-    jobPosition: "CEO",
+    jobPosition: "President",
     details: `As the president of DESI, Neyer is responsible for formulating and implementing the
     strategic plan that guides the direction of the company, as well as overseeing all operation
     development and ensuring customer fulfillment. Neyer’s career started while he was still in high

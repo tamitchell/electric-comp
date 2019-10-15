@@ -25,6 +25,10 @@ nav {
             overflow-x: scroll;     
         }
     }
+    .navbar-brand {
+        padding: 0;
+        margin: 1em !important;
+    }
     .navbar-expand-md .navbar-collapse {
         background-color: $darkblue;
         justify-content: flex-end;

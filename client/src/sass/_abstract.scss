@@ -41,10 +41,17 @@ h2 {
 
 .btn__contact {
     padding: 0.5em;
+    margin: auto 1em;
+    height: 50px !important;
     border: 1px solid $icewhite;
     overflow: hidden;
     position: relative;
     color: $icewhite;
+    button {
+      height: 100% !important;
+      padding: 0;
+      margin: 0;
+    }
     
     a {
       z-index: 20;

@@ -3,6 +3,7 @@ import {
   Card, CardHeader, CardFooter, CardBody
 } from "reactstrap";
 import { serviceData } from './ServiceData';
+import ContactUsModal from '../ContactUsModal'
 const workTogether = require('../../img/handshake.png')
 export default function AdditionalServices() {
     return (
@@ -28,7 +29,7 @@ export default function AdditionalServices() {
                            })}
                        </div>
                        </CardBody>
-                    <CardFooter><button className="btn__contact">Contact Us</button></CardFooter>
+                    <CardFooter><ContactUsModal /></CardFooter>
                 </Card>
             </div>
                 <div className="inner__row d-none d-lg-block">
