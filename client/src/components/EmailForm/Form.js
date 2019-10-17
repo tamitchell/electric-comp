@@ -52,7 +52,6 @@ export default class FormComponent extends Component {
               onChange={this.props.handleChange}
               name="companyName"
               placeholder="Company Name"
-              required
             />
         </Label>
 

@@ -1,34 +1,31 @@
+@import './variables';
 .form-status {
-  color: white;
+  color: $darkblue;
   height: 500px;
   padding: 10em;
-  p {
-    font-style: italic;
+  svg {
+    width: 100px;
+    display: block;
+    margin: 40px auto 0;
   }
-}
+  .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+  .path.circle {
+    animation: dash .9s ease-in-out;
+  }
+  
+  .path.check {
+    stroke-dashoffset: -100;
+    animation: check 3s ease-in;
+    animation-iteration-count: 1;
 
-.red-container {
-  min-height: 800px;
-  height: auto;
-  background-color: $mainred;
-  .row {
-    flex-flow: row nowrap;
-    .col {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      text-align: center;
-      .message-detail {
-        @extend .col;
-        height: 100%;
-      }
-    }
-    .btn {
-      display: inline-block;
-      align-self: center;
-      margin: 1em;
-      @include btn(white, transparent, white, black);
-    }
+  }
+  p {
+    margin-top: 3em;
+    font-style: italic;
+    text-align: center;
   }
 }
 
@@ -78,7 +75,6 @@
 }
 
 .subject-type {
-  // border: 1px solid red;
   h5 {    
     @include font-component($darkblue, $body-fontsize, center, uppercase);
     font-weight: bold;
